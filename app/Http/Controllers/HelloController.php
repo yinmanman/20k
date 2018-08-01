@@ -12,7 +12,7 @@ class HelloController extends Controller{
 		$this->middleware('auth');
 	}
 	public function index(){
-		return view('hello');
+		return view('index');
 	}
 	public function list(){
 		$data = Db::table('admin')->paginate(2);
