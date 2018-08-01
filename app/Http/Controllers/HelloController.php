@@ -11,7 +11,14 @@ class HelloController extends Controller{
 	public function __construct(){
 		$this->middleware('auth');
 	}
+<<<<<<< HEAD
 	public function index(){
 		$this->view('index');
 	}
+
+=======
+	public function index2(){
+		$this->view("index2");
+	}
 }
+>>>>>>> huangxiao
