@@ -14,48 +14,6 @@ class HelloController extends Controller{
 	public function index(){
 		return view('hello');
 	}
-
-	/*public function show(){
-		$count = count(Db::table('admin')->get());
-		$pagesize = 2;
-		$sum = ceil($count/$pagesize);
-		$page = Input::get('page');
-		if(empty($page)){
-			$page = 1;
-		}
-		$up = ($page-1)>0?$page-1:1;
-		$down = ($page+1)<$sum?$page+1:$sum;
-		$offset = ($page-1)*$pagesize;
-		$data = Db::select("select * from admin limit $offset,$pagesize");
-		//数字分页
-		//echo $up;die;
-		$pp = array();
-		for($i=1;$i<=$sum;$i++){
-			$pp[$i] = $i;
-		}
-		return view('show',['data'=>$data,'up'=>$up,'down'=>$down,'sum'=>$sum,'pp'=>$pp,'page'=>$page]);
-	}
-
-	public function page_pro(){
-		$count = count(Db::table('admin')->get());
-		$pagesize = 2;
-		$sum = ceil($count/$pagesize);
-		$page = Input::get('page');
-		if(empty($page)){
-			$page = 1;
-		}
-		$up = ($page-1)>0?$page-1:1;
-		$down = ($page+1)<$sum?$page+1:$sum;
-		$offset = ($page-1)*$pagesize;
-		$data = Db::select("select * from admin limit $offset,$pagesize");
-		//数字分页
-		$pp = array();
-		for($i=1;$i<=$sum;$i++){
-			$pp[$i] = $i;
-		}
-		return view('page',['data'=>$data,'up'=>$up,'down'=>$down,'sum'=>$sum,'pp'=>$pp,'page'=>$page]);
-	}*/
-
 	public function show(){
 		$data = Db::table('admin')->paginate(2);
 		return view('show',['data'=>$data]);
@@ -94,30 +52,5 @@ class HelloController extends Controller{
 		if($res){
 			return redirect('show');
 		}*/
-	}
-
-	public function delete(){
-		$id = $_GET['id'];
-		$res = Db::table('admin')->where('id',$id)->delete();
-		if($res){
-			return redirect('show');
-		}
-	}
-
-	public function update(){
-		$id = $_GET['id'];
-		$res = Db::table('admin')->where('id',$id)->first();
-		return view('update',['res'=>$res]);
-	}
-
-	public function updateDo(){
-		$id = $_POST['id'];
-		$data['username'] = $_POST['username'];
-		$data['mail'] = $_POST['mail'];
-		$data['nickname'] = $_POST['nickname'];
-		$res = Db::table('admin')->where("id",$id)->update($data);
-		if($res){
-			return redirect('show');
-		}
 	}
 }
