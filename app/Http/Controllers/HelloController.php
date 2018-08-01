@@ -14,10 +14,4 @@ class HelloController extends Controller{
 	public function index(){
 		$this->view('index');
 	}
-<<<<<<< HEAD
-=======
-	public function index1(){
-		$this->view('index1');
-	}
->>>>>>> zhaojia
 }
