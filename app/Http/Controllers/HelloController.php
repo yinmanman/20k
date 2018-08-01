@@ -12,10 +12,9 @@ class HelloController extends Controller{
 		$this->middleware('auth');
 	}
 	public function index(){
-		return view('index');
+		$this->view('index');
 	}
-	public function list(){
-		$data = Db::table('admin')->paginate(2);
-		return view('show',['data'=>$data]);
+	public function index1(){
+		$this->view('index1');
 	}
 }
