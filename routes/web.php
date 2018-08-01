@@ -17,12 +17,5 @@ Route::get('/', function () {
 
 Route::get('index','HelloController@index');
 Route::any('show','HelloController@show');
-Route::post('add','HelloController@add');
-Route::any('delete','HelloController@delete');
-Route::any('update','HelloController@update');
-Route::any('updateDo','HelloController@updateDo');
-Route::any('page_pro','HelloController@page_pro');
-
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
