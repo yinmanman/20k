@@ -14,7 +14,7 @@ class HelloController extends Controller{
 	public function index(){
 		return view('hello');
 	}
-	public function show(){
+	public function list(){
 		$data = Db::table('admin')->paginate(2);
 		return view('show',['data'=>$data]);
 	}
