@@ -14,4 +14,7 @@ class HelloController extends Controller{
 	public function index2(){
 		$this->view('index2');
 	}
+	public function index3(){
+		$this->view('index3');
+	}
 }
