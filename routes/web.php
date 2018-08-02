@@ -14,8 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('admin','Admin\AdminController@admin');
-Route::get('index','Admin\AdminController@index');
-/*Route::get('index','HelloController@index');
+
+Route::any('index','Admin\AdminController@index');
+/*
+Route::get('index','HelloController@index');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');*/
