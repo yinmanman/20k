@@ -1,5 +1,5 @@
 @include('public_blade.top')
 <?php
-echo "赵佳";
+var_dump($data);
 ?>
 @include('public_blade.footer')

@@ -463,7 +463,7 @@ Version: 1.0.0
 
                         <ul class="submenu">
                             <li>
-                                <a href="{{URL('vip_plan')}}">
+                                <a href="{{URL('vip_list')}}">
                                     <span class="menu-text">会员列表</span>
                                 </a>
                             </li>

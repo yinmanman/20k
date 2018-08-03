@@ -16,10 +16,14 @@ Route::get('/', function () {
 });
 
 Route::any('index','Admin\AdminController@index');
-Route::any('movie','Admin\AdminController@movie');
-Route::any('movie_house','Admin\AdminController@movie_house');
-Route::any('movie_plan','Admin\AdminController@movie_plan');
-Route::any('vip_plan','Admin\AdminController@vip_plan');
+//世明影片管理列表
+Route::any('movie_list','Admin\AdminController@movie_list');
+//黄笑放映厅管理列表
+Route::any('movie_house_list','Admin\AdminController@movie_house_list');
+//世超放映厅安排列表
+Route::any('movie_plan_list','Admin\AdminController@movie_plan_list');
+//赵佳会员列表
+Route::any('vip_list','Admin\VipController@vip_list');
 /*
 Route::get('index','HelloController@index');
 Auth::routes();
