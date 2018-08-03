@@ -417,7 +417,7 @@ Version: 1.0.0
 
                         <ul class="submenu">
                             <li>
-                                <a href="{{URL('movie')}}">
+                                <a href="{{URL('movie_list')}}">
                                     <span class="menu-text">影片列表</span>
                                 </a>
                             </li>
@@ -432,7 +432,7 @@ Version: 1.0.0
 
                         <ul class="submenu">
                             <li>
-                                <a href="{{URL('movie_house')}}">
+                                <a href="{{URL('movie_house_list')}}">
                                     <span class="menu-text">放映厅管理列表</span>
                                 </a>
                             </li>
@@ -448,7 +448,7 @@ Version: 1.0.0
 
                         <ul class="submenu">
                             <li>
-                                <a href="{{URL('movie_plan')}}">
+                                <a href="{{URL('movie_plan_list')}}">
                                     <span class="menu-text">放映厅安排列表</span>
                                 </a>
                             </li>
