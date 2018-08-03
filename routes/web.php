@@ -27,6 +27,7 @@ Route::any('all', 'Admin\VipController@all');
 Route::any('updatevip','Admin\VipController@updatevip');
 //end
 //前台
-Route::get('seat','Home\SeatController@seat');
-Route::get('time','Home\SeatController@time');
+Route::any('seat','Home\SeatController@seat');
+Route::any('time','Home\SeatController@time');
+Route::any('list','Home\SeatController@filmList');
 

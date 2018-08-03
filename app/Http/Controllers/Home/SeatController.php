@@ -11,4 +11,8 @@
 		public function time(){
 			return view('home/time');
 		}
+
+		public function filmList(){
+			return view('home/list');
+		}
 	}
