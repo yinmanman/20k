@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::any('index','Admin\AdminController@index');
 //世明影片管理列表
 Route::any('movie_list','Admin\MovieController@movie_list');
@@ -26,7 +27,8 @@ Route::any('movie_plan_list','Admin\PlanController@movie_plan_list');
 
 //赵佳会员列表
 Route::any('vip_list','Admin\VipController@vip_list');
-/*
-Route::get('index','HelloController@index');
-Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');*/
+
+//前台
+Route::get('seat','Home\SeatController@seat');
+Route::get('time','Home\SeatController@time');
+
