@@ -3,168 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<title>时间场次安排</title>
-	<style>
-		.head-wrap {
-		    background-color: #fff;
-		    z-index: 100;
-		    border-bottom: 1px #e5e5e5 solid;
-		}
-		.head-wrap .head-content {
-		    display: block;
-		    height: 72px;
-		}
-		.detail-wrap {
-		    width: 100%;
-		    height: auto;
-		    position: relative;
-		    background: #42383d;
-		    z-index: 1;
-		    overflow: hidden;
-		    padding-bottom: 20px;
-		    margin-bottom: 50px;
-		}
-		.center-wrap {
-		    position: relative;
-		}
-		.cont-title {
-		    width: 100%;
-		    height: 50px;
-		    line-height: 50px;
-		    font-size: 20px;
-		    border-bottom: 1px solid #7a7a7a;
-		    border-bottom: 1px solid rgba(255,255,255,.3);
-		    margin-bottom: 16px;
-		}
-		.cont-pic {
-		    float: left;
-		    width: 225px;
-		}
-		.cont-pic img {
-		    display: inline-block;
-		    width: 210px;
-		    height: 280px;
-		    overflow: hidden;
-		}
-		.cont-info {
-		    float: left;
-		    width: 550px;
-		}
-		.cont-view a span {
-		    display: inline-block;
-		    position: absolute;
-		    width: 20px;
-		    height: 20px;
-		    background: rgba(0,0,0,.5);
-		    text-align: center;
-		    line-height: 20px;
-		    color: #fff;
-		    bottom: 0;
-		    right: 0;
-		}
-		.cont-view .float-layer-hook {
-		    display: inline-block;
-		    float: left;
-		    margin-bottom: 20px;
-		}
-		.cont-view a {
-		    display: inline-block;
-		    width: 156px;
-		    height: 104px;
-		    overflow: hidden;
-		    position: relative;
-		}
-		.act-lable, a, a:link {
-		    color: #eb002a;
-		}
-		a {
-		    text-decoration: none;
-		}
-		ol, ul {
-		    list-style: none;
-		}
-		.cont-time {
-		    float: right;
-		    width: 156px;
-		    height: 22px;
-		    text-align: right;
-		    line-height: 22px;
-		    font-size: 14px;
-		}
-		.cont-view {
-		    float: right;
-		    width: 156px;
-		    padding-top: 40px;
-		}
-		.cont-view .float-layer-hook {
-		    display: inline-block;
-		    float: left;
-		    margin-bottom: 20px;
-		}
-		.center-wrap::after {
-		    content: '\0020';
-		    display: block;
-		    height: 0;
-		    clear: both;
-		}
-		.center-wrap {
-		    width: 990px;
-		    min-width: 990px;
-		    margin: 0 auto;
-		    *zoom: 1;
-		}
-		.hall-table {
-		    width: 100%;
-		    color: #797979;
-		}
-		table {
-		    border-collapse: collapse;
-		    border-spacing: 0;
-		}
-		.hall-table thead {
-		    font-size: 14px;
-		    background: #EAEAEA;
-		}
-
-		.hall-table tbody {
-		    font-size: 13px;
-		}
-		.hall-table tbody .hall-time {
-		    font-size: 12px;
-		}
-		.hall-table tbody td {
-		    height: 60px;
-		    text-align: center;
-		    line-height: 23px;
-		}
-		.hall-table tbody .hall-time .bold {
-		    display: inline-block;
-		    width: 100%;
-		    font-size: 18px;
-		    font-weight: 700;
-		    clear: both;
-		}
-		.hall-table tbody td {
-		    height: 60px;
-		    text-align: center;
-		    line-height: 23px;
-		}
-
-		.hall-table tbody .even {
-		    background: #F6F6F6;
-		}
-		.hall-table tbody .hall-seat .seat-btn {
-		    display: inline-block;
-		    width: 128px;
-		    height: 33px;
-		    line-height: 33px;
-		    color: #fff;
-		    background: #F42429;
-		    overflow: hidden;
-		    margin-top: 8px;
-		}
-	</style>
+	<link href="http://www.20k.com/css/time.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+	<div align="right">
+		<a href="">登录</a>
+		<a href="">注册</a>
+	</div>
 	<div class="head-wrap" data-spm="header">
 	<div class="head-content center-wrap">
 		<h1 class="logo">
@@ -198,18 +43,17 @@
 	        </div>
 	    </div>
 	    <div class="nav-wrap">
-	    	 <ul class="nav">
-				                   	<li class="J_NavItem ">
-                    	<a href="https://dianying.taobao.com/index.htm?n_s=new" target="_top">首页</a>
-                    </li>
-                    <li class="J_NavItem  current ">
-                    	<a href="https://dianying.taobao.com/showList.htm?n_s=new" target="_top">影片</a>
-                    </li>
-    				 <li class="J_NavItem ">
-                    	<a href="https://dianying.taobao.com/cinemaList.htm?n_s=new" target="_top">影院</a>
-                    </li>
-
-                  				            </ul>
+	    	<ul class="nav">
+				<li class="J_NavItem ">
+                	<a href="http://www.20k.com/list" target="_top" id="shouye">首页</a>
+                </li>
+                <li class="J_NavItem  current ">
+                	<a href="http://www.20k.com/time" target="_top" id="yingpian">影片</a>
+                </li>
+				 <li class="J_NavItem ">
+                	<a href="https://dianying.taobao.com/cinemaList.htm?n_s=new" target="_top">影院</a>
+                </li>
+            </ul>
 	    </div>
 	    <div class="entrance-wrap">
 	    	<ul class="entrance">
@@ -866,3 +710,14 @@
 	</div>		
 </body>
 </html>
+<script src="http://www.20k.com/js/jquery-1.11.2.min.js"></script>
+<script>
+	$('#yingpian').click(function(){
+		$('#yingpian').css('border-bottom','2px #eb002a solid');
+		$('#shouye').css('border-bottom','1px solid white');
+	});
+	$('#shouye').click(function(){
+		$('#shouye').css('border-bottom','2px #eb002a solid');
+		$('#yingpian').css('border-bottom','1px solid white');
+	});
+</script>

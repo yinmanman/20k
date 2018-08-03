@@ -29,6 +29,7 @@ Route::any('movie_plan_list','Admin\PlanController@movie_plan_list');
 Route::any('vip_list','Admin\VipController@vip_list');
 
 //前台
-Route::get('seat','Home\SeatController@seat');
-Route::get('time','Home\SeatController@time');
+Route::any('seat','Home\SeatController@seat');
+Route::any('time','Home\SeatController@time');
+Route::any('list','Home\SeatController@filmList');
 
