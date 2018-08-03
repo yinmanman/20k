@@ -49,7 +49,7 @@
 	                	<a href="http://www.20k.com/list" target="_top" id="shouye">首页</a>
 	                </li>
 	                <li class="J_NavItem">
-	                	<a href="http://www.20k.com/time" target="_top" id="yingpian">影片</a>
+	                	<a href="#" target="_top" id="yingpian">影片</a>
 	                </li>
 					 <li class="J_NavItem ">
 	                	<a href="#" target="_top">影院</a>
@@ -86,149 +86,45 @@
 		<div class="tab-content">
 		<!-- 正在热映 -->
 			<div class="tab-movie-list" style="display: block;" id="hotlist">
+				@foreach ($data as $k => $v)
 	    	    <div class="movie-card-wrap">
     			    <a href="https://dianying.taobao.com/showDetail.htm?showId=233674&amp;n_s=new&amp;source=current" class="movie-card">
 	                    <div class="movie-card-tag">
 	                    	<i class="t-203"></i>
 	                    </div>
 	                    <div class="movie-card-poster">
-							<img data-src="http://www.20k.com/upload/TB1QJPmGhGYBuNjy0FnXXX5lpXa_.jpg_160x240.jpg" src="http://www.20k.com/upload/TB1QJPmGhGYBuNjy0FnXXX5lpXa_.jpg_160x240.jpg" width="160" height="224">
+							<img data-src="http://www.20k.com/{{ $v->poster }}" src="http://www.20k.com/{{ $v->poster }}" width="160" height="224">
 	                    </div>
 	                    <div class="movie-card-name">
-	                        <span class="bt-l">西虹市首富</span>
-	                        <span class="bt-r">9.1</span>
+	                        <span class="bt-l">{{ $v->film_name }}</span>
+	                        <span class="bt-r">{{ $v->score }}</span>
 	                    </div>
 	                </a>
-                	<a href="https://dianying.taobao.com/showDetail.htm?showId=233674&amp;n_s=new" class="movie-card-buy">选座购票</a>
+                	<a href="http://www.20k.com/time?id={{ $v->film_id }}" class="movie-card-buy">选座购票</a>
     			</div>
-		    	<div class="movie-card-wrap">
-    			    <a href="https://dianying.taobao.com/showDetail.htm?showId=1273135&amp;n_s=new&amp;source=current" class="movie-card">
-                    	<div class="movie-card-tag"><i class="t-101"></i></div>
-                    	<div class="movie-card-poster">
-						    <img data-src="http://www.20k.com/upload/TB1wXN_kRsmBKNjSZFFXXcT9VXa_.jpg_160x240.jpg" src="http://www.20k.com/upload/TB1wXN_kRsmBKNjSZFFXXcT9VXa_.jpg_160x240.jpg" width="160" height="224">
-                    	</div>
-	                    <div class="movie-card-name">
-	                        <span class="bt-l">风语咒</span>
-	                        <span class="bt-r">9.1</span>
-	                    </div>
-	                </a>
-                	<a href="https://dianying.taobao.com/showDetail.htm?showId=1273135&amp;n_s=new" class="movie-card-buy">选座购票</a>
-    			</div>
-		    	<div class="movie-card-wrap">
-    			    			<a href="https://dianying.taobao.com/showDetail.htm?showId=1277962&amp;n_s=new&amp;source=current" class="movie-card">
-                    <div class="movie-card-tag"><i class="t-101"></i></div>
-                    <div class="movie-card-poster">
-						                        <img data-src="http://www.20k.com/upload/TB1dWHkIwaTBuNjSszfXXXgfpXa_.jpg_160x240.jpg" src="http://www.20k.com/upload/TB1dWHkIwaTBuNjSszfXXXgfpXa_.jpg_160x240.jpg" width="160" height="224">
-                    </div>
-                    <div class="movie-card-name">
-                        <span class="bt-l">小偷家族</span>
-                        <span class="bt-r">8.9</span>
-                    </div>
-                    
-                	</a>
-                	<a href="https://dianying.taobao.com/showDetail.htm?showId=1277962&amp;n_s=new" class="movie-card-buy">选座购票</a>
-    			</div>
-		    	<div class="movie-card-wrap">
-    			    			<a href="https://dianying.taobao.com/showDetail.htm?showId=213665&amp;n_s=new&amp;source=current" class="movie-card">
-                    <div class="movie-card-tag"><i class="t-201"></i></div>
-                    <div class="movie-card-poster">
-						                        <img data-src="http://www.20k.com/upload/TB1AqiEBntYBeNjy1XdXXXXyVXa_.jpg_160x240.jpg" src="http://www.20k.com/upload/TB1AqiEBntYBeNjy1XdXXXXyVXa_.jpg_160x240.jpg" width="160" height="224">
-                    </div>
-                    <div class="movie-card-name">
-                        <span class="bt-l">狄仁杰之四大天王</span>
-                        <span class="bt-r">8.2</span>
-                    </div>
-                   
-                	</a>
-                	<a href="https://dianying.taobao.com/showDetail.htm?showId=213665&amp;n_s=new" class="movie-card-buy">选座购票</a>
-    			</div>
-		    	<div class="movie-card-wrap">
-    			    			<a href="https://dianying.taobao.com/showDetail.htm?showId=1270979&amp;n_s=new&amp;source=current" class="movie-card">
-                    <div class="movie-card-tag"><i class="t-101"></i></div>
-                    <div class="movie-card-poster">
-						                        <img data-src="http://www.20k.com/upload/TB1r_vVEWSWBuNjSsrbXXa0mVXa_.jpg_160x240.jpg" src="http://www.20k.com/upload/TB1r_vVEWSWBuNjSsrbXXa0mVXa_.jpg_160x240.jpg" width="160" height="224">
-                    </div>
-                    <div class="movie-card-name">
-                        <span class="bt-l">的士速递5</span>
-                        <span class="bt-r">8.0</span>
-                    </div>
-                    
-                </a>
-                <a href="https://dianying.taobao.com/showDetail.htm?showId=1270979&amp;n_s=new" class="movie-card-buy">选座购票</a>
-    		</div>
+    			@endforeach
 			</div>
 
 		<!-- 即将热映 -->
 		<div class="tab-movie-list" id="waitlist" style="">
+			@foreach ($list as $k => $v)
 	    	<div class="movie-card-wrap">
                 <a href="https://dianying.taobao.com/showDetail.htm?showId=1275870&amp;n_s=new&amp;source=soon" class="movie-card">
                     <div class="movie-card-tag"><i class="t-"></i></div>
                     <div class="movie-card-poster">
-						                        <img src="http://www.20k.com/upload/TB1r32_AFmWBuNjSspdXXbugXXa_.jpg_160x240.jpg" width="160" height="224">
+						                        <img src="http://www.20k.com/{{ $v->poster }}" width="160" height="224">
                     </div>
                     <div class="movie-card-name">
-                        <span class="bt-l">肆式青春</span>
+                        <span class="bt-l">{{ $v->film_name }}</span>
                         <span class="bt-r"></span>
                     </div>
                     
                 </a>
     			<a href="https://dianying.taobao.com/showDetail.htm?showId=1275870&amp;n_s=new&amp;source=soon" class="movie-card-soon">上映时间2018-08-04</a> 
     	 	</div>
-    	    <div class="movie-card-wrap">
-                <a href="https://dianying.taobao.com/showDetail.htm?showId=1286219&amp;n_s=new&amp;source=soon" class="movie-card">
-                    <div class="movie-card-tag"><i class="t-"></i></div>
-                    <div class="movie-card-poster">
-						                        <img src="http://www.20k.com/upload/TB1.CEjIwmTBuNjy1XbXXaMrVXa_.jpg_160x240.jpg" width="160" height="224">
-                    </div>
-                    <div class="movie-card-name">
-                        <span class="bt-l">蜀山降魔传</span>
-                        <span class="bt-r"></span>
-                    </div>
-                </a>
-    			<a href="https://dianying.taobao.com/showDetail.htm?showId=1286219&amp;n_s=new&amp;source=soon" class="movie-card-soon">上映时间2018-08-05</a> 
-    	 </div>
-    	         <div class="movie-card-wrap">
-                    			<a href="https://dianying.taobao.com/showDetail.htm?showId=1284928&amp;n_s=new&amp;source=soon" class="movie-card">
-                    <div class="movie-card-tag"><i class="t-"></i></div>
-                    <div class="movie-card-poster">
-						                        <img src="http://www.20k.com/upload/TB1x5stENGYBuNjy0FnXXX5lpXa_.jpg_160x240.jpg" width="160" height="224">
-                    </div>
-                    <div class="movie-card-name">
-                        <span class="bt-l">真心话太冒险</span>
-                        <span class="bt-r"></span>
-                    </div>
-                    
-                </a>
-    			<a href="https://dianying.taobao.com/showDetail.htm?showId=1284928&amp;n_s=new&amp;source=soon" class="movie-card-soon">上映时间2018-08-07</a> 
-    	 </div>
-    	         <div class="movie-card-wrap">
-                    			<a href="https://dianying.taobao.com/showDetail.htm?showId=213747&amp;n_s=new&amp;source=soon" class="movie-card">
-                    <div class="movie-card-tag"><i class="t-"></i></div>
-                    <div class="movie-card-poster">
-						                        <img src="http://www.20k.com/upload/TB14jZCIhWYBuNjy1zkXXXGGpXa_.jpg_160x240.jpg" width="160" height="224">
-                    </div>
-                    <div class="movie-card-name">
-                        <span class="bt-l">巨齿鲨</span>
-                        <span class="bt-r"></span>
-                    </div>
-                   
-                </a>
-    			<a href="https://dianying.taobao.com/showDetail.htm?showId=213747&amp;n_s=new&amp;source=soon" class="movie-card-soon">上映时间2018-08-10</a> 
-    	 </div>
-    	         <div class="movie-card-wrap">
-                    			<a href="https://dianying.taobao.com/showDetail.htm?showId=226585&amp;n_s=new&amp;source=soon" class="movie-card">
-                    <div class="movie-card-tag"><i class="t-"></i></div>
-                    <div class="movie-card-poster">
-						                        <img src="http://www.20k.com/upload/TB1DCS8IL1TBuNjy0FjXXajyXXa_.jpg_160x240.jpg" width="160" height="224">
-                    </div>
-                    <div class="movie-card-name">
-                        <span class="bt-l">美食大冒险之英雄烩</span>
-                        <span class="bt-r"></span>
-                    </div>
-                </a>
-    			<a href="https://dianying.taobao.com/showDetail.htm?showId=226585&amp;n_s=new&amp;source=soon" class="movie-card-soon">上映时间2018-08-10</a> 
-    	 </div>
-    	 	</div>
+    	 	@endforeach
+    	  
+    	</div>
 
 	</div>
 </div>

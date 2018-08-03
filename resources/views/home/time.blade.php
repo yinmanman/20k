@@ -68,19 +68,29 @@
 	</div>
 </div>
 	<div class="detail-wrap">
+		@foreach ($row as $k => $v)
 		<div class="center-wrap">
-			<h3 class="cont-title">西虹市首富 <i>（Hello Mr. Billionaire）</i>  <em class="score">9.1</em></h3>
+			<h3 class="cont-title">{{ $v->film_name }} 
+				<i>（{{ $v->enname }}）</i>  <em class="score">{{ $v->score }}</em>
+			</h3>
 			<div class="cont-pic">
-				<img with="230" heigh="300" src="https://img.alicdn.com/bao/uploaded/i1/TB1QJPmGhGYBuNjy0FnXXX5lpXa_.jpg_300x300.jpg" alt="">
+				<img with="230" heigh="300" src="http://www.20k.com/{{ $v->poster }}" alt="">
 			</div>
 			<ul class="cont-info">
-								<li>导演：闫非, 彭大魔</li>				<li>主演：沈腾,宋芸桦,张一鸣,常远,张晨光</li>				<li>类型：喜剧</li>				<li>制片国家/地区：中国大陆</li>				<li>片长：118分钟</li>				<li class="J_shrink shrink">剧情介绍：《西虹市首富》的故事发生在《夏洛特烦恼》中的“特烦恼”之城“西虹市”。混迹于丙级业余足球队的守门员王多鱼（沈腾饰演），因比赛失利被开除离队。正处于人生最低谷的他接受了神秘... <a class="shrink-btn" href="javascript:;">展开&gt;&gt;</a></li>			</ul>
-			<div class="cont-time">上映时间：2018-07-27 08:00</div>
+								<li>导演：{{ $v->director }}</li>				
+								<li>主演：{{ $v->actor }}</li>				
+								<li>类型：{{ $v->category }}</li>				
+								<li>制片国家/地区：{{ $v->area }}</li>				
+								<li>片长：{{ $v->time }}</li>				
+								<li class="J_shrink shrink">剧情介绍：<a class="shrink-btn" href="javascript:;">展开&gt;&gt;</a></li>
+			</ul>
+			<div class="cont-time">上映时间：{{ $v->showtime }}</div>
 			<div class="cont-view">
-									<a href="javascript:;" data-showid="233674" data-type="image" class="float-layer-hook"><img src="https://img.alicdn.com/bao/uploaded/i3/TB1IU3gnLuSBuNkHFqDXXXfhVXa_.jpg_160x160.jpg" alt=""><span>20</span></a>
-													<a href="javascript:;" data-showid="233674" data-type="video" class="float-layer-hook"><img src="https://img.alicdn.com/bao/uploaded/TB2Dz2XG1GSBuNjSspbXXciipXa_!!6000000002516-0-tbvideo.jpg_100x100.jpg" alt="" width="160" height="110"><s></s><span>10</span></a>
-							</div>
+				<a href="javascript:;" data-showid="233674" data-type="image" class="float-layer-hook"><img src="https://img.alicdn.com/bao/uploaded/i3/TB1IU3gnLuSBuNkHFqDXXXfhVXa_.jpg_160x160.jpg" alt=""><span>20</span></a>
+				<a href="javascript:;" data-showid="233674" data-type="video" class="float-layer-hook"><img src="https://img.alicdn.com/bao/uploaded/TB2Dz2XG1GSBuNjSspbXXciipXa_!!6000000002516-0-tbvideo.jpg_100x100.jpg" alt="" width="160" height="110"><s></s><span>10</span></a>
+			</div>
 		</div>
+		@endforeach
 	</div>
 	<div class="center-wrap">
 		<table class="hall-table">
