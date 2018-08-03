@@ -417,8 +417,8 @@ Version: 1.0.0
 
                         <ul class="submenu">
                             <li>
-                                <a href="{{URL('article')}}">
-                                    <span class="menu-text">文章列表</span>
+                                <a href="{{URL('movie')}}">
+                                    <span class="menu-text">影片列表</span>
                                 </a>
                             </li>
                         </ul>
@@ -432,8 +432,8 @@ Version: 1.0.0
 
                         <ul class="submenu">
                             <li>
-                                <a href="{{URL('article')}}">
-                                    <span class="menu-text">文章列表</span>
+                                <a href="{{URL('movie_house')}}">
+                                    <span class="menu-text">放映厅管理列表</span>
                                 </a>
                             </li>
                         </ul>
@@ -448,8 +448,8 @@ Version: 1.0.0
 
                         <ul class="submenu">
                             <li>
-                                <a href="{{URL('article')}}">
-                                    <span class="menu-text">文章列表</span>
+                                <a href="{{URL('movie_plan')}}">
+                                    <span class="menu-text">放映厅安排列表</span>
                                 </a>
                             </li>
                         </ul>
@@ -463,8 +463,8 @@ Version: 1.0.0
 
                         <ul class="submenu">
                             <li>
-                                <a href="{{URL('article')}}">
-                                    <span class="menu-text">文章列表</span>
+                                <a href="{{URL('vip_plan')}}">
+                                    <span class="menu-text">会员列表</span>
                                 </a>
                             </li>
                         </ul>
@@ -479,7 +479,9 @@ Version: 1.0.0
                         <ul class="submenu">
                             <li>
                                 <a href="{{URL('article')}}">
-                                    <span class="menu-text">文章列表</span>
+                                    <span class="menu-text">销售统计
+
+                                    列表</span>
                                 </a>
                             </li>
                         </ul>

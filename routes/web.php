@@ -16,6 +16,10 @@ Route::get('/', function () {
 });
 
 Route::any('index','Admin\AdminController@index');
+Route::any('movie','Admin\AdminController@movie');
+Route::any('movie_house','Admin\AdminController@movie_house');
+Route::any('movie_plan','Admin\AdminController@movie_plan');
+Route::any('vip_plan','Admin\AdminController@vip_plan');
 /*
 Route::get('index','HelloController@index');
 Auth::routes();
