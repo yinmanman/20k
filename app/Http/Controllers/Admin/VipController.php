@@ -19,14 +19,12 @@
 	            $username = $_POST['username'];
 	            $nick_name=$_POST['nick_name'];
 	            $is_vip=$_POST['is_vip'];
-	       
 	            $vip_level=$_POST['vip_level'];
-
 	            $discount_rate=$_POST['discount_rate'];
 	            $arr=array('user_id'=>$id,'username'=>$username,'nick_name'=>$nick_name,'is_vip'=>$is_vip,'vip_level'=>$vip_level,'discount_rate'=>$discount_rate);
            		$res=DB::table('user')->where('user_id','=',$id )->update($arr);
            		if($res) {
-	                 return $this->vip_list();
+	                 return redirect('vip_list');
 	             }
 			}
 			
