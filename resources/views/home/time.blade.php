@@ -4,6 +4,12 @@
 	<meta charset="UTF-8">
 	<title>时间场次安排</title>
 	<link href="http://www.20k.com/css/time.css" rel="stylesheet" type="text/css">
+	<!--可无视-->
+	<link href="http://www.20k.com/css/main.css" rel="stylesheet" type="text/css" />
+
+	<!--必要样式-->
+	<!-- <link href="http://www.20k.com/css/bootstrap.css" rel="stylesheet" type="text/css" />
+	<link href="http://www.20k.com/css/city-picker.css" rel="stylesheet" type="text/css" /> -->
 </head>
 <body>
 	<div align="right">
@@ -15,21 +21,42 @@
 		<h1 class="logo">
 	        <a target="_top" href="https://dianying.taobao.com/?n_s=new"></a>
 	    </h1>
+	    <!-- <div class="cityWrap M-cityWrap">
+	    		    <div class="container">
+	    				
+	    				<div class="docs-methods">
+	    					<form class="form-inline">
+	    						<div id="distpicker">
+	    							<div class="form-group">
+	    								<div style="position: relative;">
+	    									<input id="city-picker3" class="form-control" readonly type="text" value="北京市" data-toggle="city-picker">
+	    								</div>
+	    							</div>
+	    							<div class="form-group">
+	    								<button class="btn btn-warning" id="reset" type="button">重置</button>
+	    								<button class="btn btn-danger" id="destroy" type="button">确定</button>
+	    							</div>
+	    						</div>
+	    					</form>
+	    				</div>
+	    				
+	    			</div>
+	    		</div> -->
 		<div class="cityWrap M-cityWrap">
-	    	<a id="cityName" class="cityName" href="javascript:"><span class="name" data-id="110100">北京</span><s class="tri"></s></a>
+			    	<a id="cityName" class="cityName" href="javascript:"><span class="name" data-id="110100">北京</span><s class="tri"></s></a>
 			<input id="H_CityId" value="310100" type="hidden">
 			<input id="H_CityName" value="上海" type="hidden">
-	        <div class="cityList ">
+			        <div class="cityList ">
 				<div class="cityBox" data-spm="city">
 					<div class="cityTitle">
 						热门:
-	                    <a href="/showDetail.htm?spm=a1z21.3046609.w2.5.32c0112aTpctUX&amp;showId=233674&amp;n_s=new&amp;city=110100" data-id="110100" class="ignore-city current">北京</a>
+			                    <a href="/showDetail.htm?spm=a1z21.3046609.w2.5.32c0112aTpctUX&amp;showId=233674&amp;n_s=new&amp;city=110100" data-id="110100" class="ignore-city current">北京</a>
 						<a href="/showDetail.htm?spm=a1z21.3046609.w2.5.32c0112aTpctUX&amp;showId=233674&amp;n_s=new&amp;city=310100" data-id="310100" class="ignore-city">上海</a>
-	                    <a href="/showDetail.htm?spm=a1z21.3046609.w2.5.32c0112aTpctUX&amp;showId=233674&amp;n_s=new&amp;city=330100" data-id="330100" class="ignore-city">杭州</a>
-	                    <a href="/showDetail.htm?spm=a1z21.3046609.w2.5.32c0112aTpctUX&amp;showId=233674&amp;n_s=new&amp;city=440100" data-id="440100" class="ignore-city">广州</a>
-	                    <a href="/showDetail.htm?spm=a1z21.3046609.w2.5.32c0112aTpctUX&amp;showId=233674&amp;n_s=new&amp;city=440300" data-id="440300" class="ignore-city">深圳</a>
-	                    <a href="/showDetail.htm?spm=a1z21.3046609.w2.5.32c0112aTpctUX&amp;showId=233674&amp;n_s=new&amp;city=500100" data-id="500100" class="ignore-city">重庆</a>
-	                    <a href="/showDetail.htm?spm=a1z21.3046609.w2.5.32c0112aTpctUX&amp;showId=233674&amp;n_s=new&amp;city=510100" data-id="510100" class="ignore-city">成都</a>
+			                    <a href="/showDetail.htm?spm=a1z21.3046609.w2.5.32c0112aTpctUX&amp;showId=233674&amp;n_s=new&amp;city=330100" data-id="330100" class="ignore-city">杭州</a>
+			                    <a href="/showDetail.htm?spm=a1z21.3046609.w2.5.32c0112aTpctUX&amp;showId=233674&amp;n_s=new&amp;city=440100" data-id="440100" class="ignore-city">广州</a>
+			                    <a href="/showDetail.htm?spm=a1z21.3046609.w2.5.32c0112aTpctUX&amp;showId=233674&amp;n_s=new&amp;city=440300" data-id="440300" class="ignore-city">深圳</a>
+			                    <a href="/showDetail.htm?spm=a1z21.3046609.w2.5.32c0112aTpctUX&amp;showId=233674&amp;n_s=new&amp;city=500100" data-id="500100" class="ignore-city">重庆</a>
+			                    <a href="/showDetail.htm?spm=a1z21.3046609.w2.5.32c0112aTpctUX&amp;showId=233674&amp;n_s=new&amp;city=510100" data-id="510100" class="ignore-city">成都</a>
 						<a href="/showDetail.htm?spm=a1z21.3046609.w2.5.32c0112aTpctUX&amp;showId=233674&amp;n_s=new&amp;city=320100" data-id="320100" class="ignore-city">南京</a>
 						<a href="/showDetail.htm?spm=a1z21.3046609.w2.5.32c0112aTpctUX&amp;showId=233674&amp;n_s=new&amp;city=320500" data-id="320500" class="ignore-city">苏州</a>
 						<a href="/showDetail.htm?spm=a1z21.3046609.w2.5.32c0112aTpctUX&amp;showId=233674&amp;n_s=new&amp;city=420100" data-id="420100" class="ignore-city">武汉</a>
@@ -40,15 +67,15 @@
 					</div>
 				</div>
 				<div class="cityShade"></div>
-	        </div>
-	    </div>
+			        </div>
+			    </div>
 	    <div class="nav-wrap">
 	    	<ul class="nav">
 				<li class="J_NavItem ">
                 	<a href="http://www.20k.com/list" target="_top" id="shouye">首页</a>
                 </li>
                 <li class="J_NavItem  current ">
-                	<a href="http://www.20k.com/time" target="_top" id="yingpian">影片</a>
+                	<a href="#" target="_top" id="yingpian">影片</a>
                 </li>
 				 <li class="J_NavItem ">
                 	<a href="https://dianying.taobao.com/cinemaList.htm?n_s=new" target="_top">影院</a>
@@ -721,6 +748,11 @@
 </body>
 </html>
 <script src="http://www.20k.com/js/jquery-1.11.2.min.js"></script>
+<script src="http://www.20k.com/js/jquery.js"></script>
+<script src="http://www.20k.com/js/bootstrap.js"></script>
+<script src="http://www.20k.com/js/city-picker.data.js"></script>
+<script src="http://www.20k.com/js/city-picker.js"></script>
+<script src="http://www.20k.com/js/main.js"></script>
 <script>
 	$('#yingpian').click(function(){
 		$('#yingpian').css('border-bottom','2px #eb002a solid');
