@@ -33,7 +33,13 @@ Route::any('movie_plan_list','Admin\PlanController@movie_plan_list');
 Route::any('vip_list','Admin\VipController@vip_list');
 Route::any('all', 'Admin\VipController@all');
 Route::any('updatevip','Admin\VipController@updatevip');
+//影院管理
+Route::any('cinema','Admin\CinemaController@cinemaList');
+Route::any('addcinema','Admin\CinemaController@addCinema');
+//地区管理
+Route::any('area','Admin\AreaController@areaList');
 //end
+
 //前台
 Route::any('seat','Home\SeatController@seat');
 Route::any('time','Home\SeatController@time');
