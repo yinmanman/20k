@@ -36,6 +36,10 @@ Route::any('updatevip','Admin\VipController@updatevip');
 //影院管理
 Route::any('cinema','Admin\CinemaController@cinemaList');
 Route::any('addcinema','Admin\CinemaController@addCinema');
+Route::any('cinemaadd','Admin\CinemaController@cinemaAdd');
+Route::any('cinemadel','Admin\CinemaController@delCinema');
+Route::any('cinemaupd','Admin\CinemaController@updCinema');
+Route::any('updatedo','Admin\CinemaController@updateDo');
 //地区管理
 Route::any('area','Admin\AreaController@areaList');
 //end
