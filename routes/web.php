@@ -44,11 +44,10 @@ Route::any('cinema','Admin\CinemaController@cinemaList');
 Route::any('addcinema','Admin\CinemaController@addCinema');
 //地区管理
 Route::any('area','Admin\AreaController@areaList');
-
 Route::any('register','Home\RegisterController@register');
-Route::any('fsyzm','Home\RegisterController@fsyzm');
+Route::any('add_user','Home\RegisterController@add_user');
+Route::any('captcha/{tmp}','Home\RegisterController@captcha');
 //end
-
 //前台
 Route::any('seat','Home\SeatController@seat');
 Route::any('time','Home\SeatController@time');
