@@ -15,6 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::any('index','Admin\AdminController@index');
+
+
+
+
+
 //世明影片管理列表
 Route::any('movie_list','Admin\MovieController@movie_list');
 //黄笑放映厅管理列表
@@ -25,6 +30,8 @@ Route::any('movie_plan_list','Admin\PlanController@movie_plan_list');
 Route::any('vip_list','Admin\VipController@vip_list');
 Route::any('all', 'Admin\VipController@all');
 Route::any('updatevip','Admin\VipController@updatevip');
+Route::any('register','Home\RegisterController@register');
+Route::any('fsyzm','Home\RegisterController@fsyzm');
 //end
 //前台
 Route::any('seat','Home\SeatController@seat');

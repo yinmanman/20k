@@ -26,8 +26,7 @@
            		if($res) {
 	                 return redirect('vip_list');
 	             }
-			}
-			
+			}	
 		}
 		public function all(){
 			$id = $_POST['id'];
