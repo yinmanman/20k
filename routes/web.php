@@ -14,6 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+// 后台开始
 Route::any('index','Admin\AdminController@index');
 //世明影片管理列表
 Route::any('movie_list','Admin\MovieController@movie_list');
@@ -36,9 +38,17 @@ Route::any('updatevip','Admin\VipController@updatevip');
 //影院管理
 Route::any('cinema','Admin\CinemaController@cinemaList');
 Route::any('addcinema','Admin\CinemaController@addCinema');
+
 //地区管理
-Route::any('area','Admin\AreaController@areaList');
-//end
+// 地区列表
+Route::any('area_list','Admin\AreaController@area_list');
+// 地区添加
+Route::any('area_add','Admin\AreaController@area_add');
+// 地区添加
+Route::any('area_delete','Admin\AreaController@area_delete');
+// 地区添加
+Route::any('area_update','Admin\AreaController@area_update');
+//后台结束
 
 //前台
 Route::any('seat','Home\SeatController@seat');

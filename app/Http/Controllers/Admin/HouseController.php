@@ -9,7 +9,7 @@
 		**/
 		public function movie_house_list(){
 			$data = DB::table('movie_house')->paginate(10);
-			return view('xiao/list',['data'=>$data]);
+			return view('movie_house/list',['data'=>$data]);
 		}
 		/**
 		添加影厅
@@ -26,7 +26,7 @@
 		            echo '<script>alert("添加成功");location.href="'.'movie_house_list'.'";</script>';
 		        }
 			}else{
-				return view('xiao/add');
+				return view('movie_house/add');
 			}
 		}
 		/**
@@ -47,7 +47,7 @@
 			if(empty($_POST)){
 				$id = $_GET['id'];
 				$data = DB::table('movie_house')->where(['house_id'=>$id])->get();
-				return view('xiao/update',['data'=>$data]);
+				return view('movie_house/update',['data'=>$data]);
 			}else{
 				$id = $_POST['house_id'];
 				$data = $_POST;
