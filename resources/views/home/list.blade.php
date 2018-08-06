@@ -9,7 +9,7 @@
 <body>
 	<div align="right">
 		<a href="">登录</a>
-		<a href="">注册</a>
+		<a href="register">注册</a>
 	</div>
 	<div class="head-wrap" data-spm="header">
 		<div class="head-content center-wrap">
