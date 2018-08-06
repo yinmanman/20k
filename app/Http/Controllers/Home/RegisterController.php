@@ -1,5 +1,6 @@
 <?php 
 	namespace App\Http\Controllers\Home;
+	use Illuminate\Support\Facades\Redis;
 	use Gregwar\Captcha\CaptchaBuilder;
 	use Illuminate\Http\Request;
 	use App\Http\Controllers\Controller; 

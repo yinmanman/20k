@@ -41,7 +41,6 @@
     					alert("验证码发送失败");
     				}
     			}
-
     		});
     	});
         $(".but").on("click",function(){
