@@ -512,7 +512,7 @@ Version: 1.0.0
 
                         <ul class="submenu">
                             <li>
-                                <a href="{{URL('area')}}">
+                                <a href="{{URL('area_list')}}">
                                     <span class="menu-text">地区
 
                                     列表</span>
