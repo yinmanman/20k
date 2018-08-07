@@ -11,8 +11,8 @@
         <input type="hidden" name="ycyzm" class="ycyzm" value="">
 		用户名：<input type="text" name="username" class="username"><br />
 		密码：<input type="password" name="password" class="password"><br />
-		手机号：<input type="text" name="tel" class="tel"><br />
-		验证：<input type="text" name="yzm" class="yzm"><input type="button" value="发送验证码" name="button" class="button"><br />
+		手机号：<input type="text" name="tel" class="tel"><input type="button" value="免费获取验证码" name="button" class="button"><br />
+		验证：<input type="text" name="yzm" class="yzm"><br />
         请输入验证码：<img src="{{ URL('captcha/1') }}" id="imgyzm"><br />
         <input type="text" name="imgyzm" value="" class="imgyzm"><br />
 		<input type="button" name="but" value="注册" class="but">
@@ -27,6 +27,7 @@
         });
     	$(".button").on("click",function(){
     		var tel = $(".tel").val();
+            var countdown=60;
     		$.ajax({
     			url:"./industrySMS.php",
     			data:{
@@ -36,7 +37,23 @@
     			success:function(msg){
     				if(msg){
                         alert("验证码发送成功");
-                        $('.ycyzm').val(msg);
+                        var obj = $('.button');
+                        settime(obj);
+                        function settime(obj){
+                            if(countdown == 0){
+                                obj.attr('disabled',false);
+                                obj.val("免费获取验证码");
+                                countdown = 60;
+                                return;
+                            }else{
+                                obj.attr('disabled',true);
+                                obj.val("重新发送(" + countdown + ")");
+                                countdown--;
+                            }
+                            setTimeout(function(){
+                                settime(obj)
+                            },1000)
+                        }
     				}else{
     					alert("验证码发送失败");
     				}
