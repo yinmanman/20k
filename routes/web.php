@@ -44,18 +44,16 @@ Route::any('updatevip','Admin\VipController@updatevip');
 //影院管理
 Route::any('cinema','Admin\CinemaController@cinemaList');
 Route::any('addcinema','Admin\CinemaController@addCinema');
-<<<<<<< HEAD
+
 Route::any('cinemaadd','Admin\CinemaController@cinemaAdd');
 Route::any('cinemadel','Admin\CinemaController@delCinema');
 Route::any('cinemaupd','Admin\CinemaController@updCinema');
 Route::any('updatedo','Admin\CinemaController@updateDo');
-//地区管理
-Route::any('area','Admin\AreaController@areaList');
 
 Route::any('register','Home\RegisterController@register');
 Route::any('fsyzm','Home\RegisterController@fsyzm');
 //end
-=======
+
 
 //地区管理
 // 地区列表
@@ -67,7 +65,7 @@ Route::any('area_delete','Admin\AreaController@area_delete');
 // 地区添加
 Route::any('area_update','Admin\AreaController@area_update');
 //后台结束
->>>>>>> huangxiao
+
 
 //前台
 Route::any('seat','Home\SeatController@seat');
