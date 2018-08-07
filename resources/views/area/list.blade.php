@@ -17,7 +17,7 @@
 		</thead>
 		<tbody id="tbody">
 			<?php
-				foreach($row['data'] as $k=>$v){
+				foreach($info as $k=>$v){
 			?>
             <tr>
             	<td><input type="checkbox" class="check" name="id[]" value="<?php echo $v['area_id'] ?>"></td>
@@ -40,9 +40,11 @@
 			<td><input type="checkbox" id="checkbox"> 全选 </td>
 		</tr>
 	</table>
-	<?php
-	echo $a;
-	?>
+	<div id="page">
+		<?php
+			echo $a;
+		?>
+	</div>
 </div>
 @include('public_blade.footer')
 <script type="text/javascript">
@@ -63,6 +65,7 @@
 		var arr = [];
 		var token = $("#token").val();
 		var str = '';
+		var level = '';
 	    $("#more_del").on("click",function(){
 	    	$(".check").each(function() {   
 				if(this.checked == true){
@@ -78,20 +81,16 @@
 				dataType:'json',
 				type:"post",
 				success:function(msg){
-					$.each(msg.data, function(index,callback){
-						str += "<tr><td><input type='checkbox' class='check' name='id[]'' value='"+msg.data[index].area_id+"'></td><td>'"+msg.data[index].area_id+"'</td><td></td><td><a href='area_update?id="+msg.data[index].area_id+">修改</a></td></tr>";
+					$.each(msg.new, function(index,callback){
+						var nbsp = '';
+						level = msg.new[index].level;
+						for(var i=0;i<level;i++){
+							nbsp += "&nbsp;&nbsp;&nbsp;&nbsp;";
+						}
+						str += "<tr><td><input type='checkbox' class='check' name='id[]' value='"+msg.new[index].area_id+"'></td><td>"+msg.new[index].area_id+"</td><td>"+nbsp+msg.new[index].area_name+"</td><td><a href='area_update?id="+msg.new[index].area_id+"'>修改</a></td></tr>";
 					});
 					$("#tbody").html(str);
-					if($('#house_type').html() == 0){
-						$('#house_type').html('3D');
-					}else{
-						$('#house_type').html('2D');
-					}
-					if($('#house_status').html() == 0){
-						$('#house_status').html('播放电影');
-					}else{
-						$('#house_status').html('候场');
-					}*/
+					$("#page").html(msg.a);
                	}
 			});
 	    });

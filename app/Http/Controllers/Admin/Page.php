@@ -40,7 +40,7 @@ class page {
             $this->myde_page_count = 1;
         if ($this->myde_page > $this->myde_page_count)
             $this->myde_page = $this->myde_page_count;
-        $this->limit = ($this->myde_page - 1) * $this->myde_size;
+        $this->limit = ($this->myde_page - 1) * $this->myde_size; 
         $this->myde_i = $this->myde_page - $show_pages;
         $this->myde_en = $this->myde_page + $show_pages;
         if ($this->myde_i < 1) {
@@ -76,38 +76,30 @@ class page {
 
     //首页
     private function myde_home() {
-        //if ($this->myde_page != 1) {
-            return "<a href='" . $this->page_replace(1) . "' title='首页'>首页</a>";
-        //} else {
-           // return "<p>首页</p>";
-        //}
+        return "<a href='" . $this->page_replace(1) . "' title='首页'>首页</a>";
     }
 
     //上一页
     private function myde_prev() {
-        //if ($this->myde_page != 1) {
+        if ($this->myde_page != 1) {
             return "<a href='" . $this->page_replace($this->myde_page - 1) . "' title='上一页'>上一页</a>";
-        //} else {
-         //   return "<p>上一页</p>";
-        //}
+        } else {
+            return "<a href='" . $this->page_replace(1) . "' title='上一页'>上一页</a>";
+        }
     }
 
     //下一页
     private function myde_next() {
-        //if ($this->myde_page != $this->myde_page_count) {
+        if ($this->myde_page != $this->myde_page_count) {
             return "<a href='" . $this->page_replace($this->myde_page + 1) . "' title='下一页'>下一页</a>";
-        //} else {
-         //   return"<p>下一页</p>";
-        //}
+        } else {
+            return "<a href='" . $this->page_replace($this->myde_page_count) . "' title='下一页'>下一页</a>";
+        }
     }
 
     //尾页
     private function myde_last() {
-        //if ($this->myde_page != $this->myde_page_count) {
-            return "<a href='" . $this->page_replace($this->myde_page_count) . "' title='尾页'>尾页</a>";
-       //} else {
-         //   return "<p>尾页</p>";
-        //}
+        return "<a href='" . $this->page_replace($this->myde_page_count) . "' title='尾页'>尾页</a>";
     }
 
     //输出

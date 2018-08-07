@@ -9,13 +9,23 @@
 		列表展示
 		**/
 		public function area_list(){
-			$data = DB::table('area')->paginate(10);
+			if(!isset($_GET['page'])){
+				$p = 1;
+			}else{
+				$p = $_GET['page'];
+			}
+			// 每页显示条数
+			$per_page = 5;
+			$offset = ($p-1)*$per_page;
+			$total = DB::table('area')->get()->count();
+			$path = "area_list?page={page}";
+			$data = DB::table('area')->get();
 			$row = json_decode(json_encode($data), true);
-			$arr = $this->tree($row['data']);
-			$row['data'] = $arr;
-			$page = new Page($row['total'],$row['per_page'],$row['current_page'],$row['path']."?page={page} ",2);
+			$arr = $this->tree($row);
+			$info = array_slice($arr,$offset,$per_page);
+			$page = new Page($total,$per_page,$p,$path);
 			$a = $page->myde_write();
-			return view('area/list')->with('row',$row)->with('a',$a);
+			return view('area/list')->with('info',$info)->with('a',$a);
 		}
 		/**
 		递归排序
@@ -58,13 +68,18 @@
 			$id = $_POST['id'];
 			$res = DB::table('area')->whereIn('area_id',$id)->delete();
 			if($res){
-				$data = DB::table('area')->paginate(10);
+				$p = 1;
+				$per_page = 5;
+				$offset = ($p-1)*$per_page;
+				$total = DB::table('area')->get()->count();
+				$path = "area_list?page={page}";
+				$data = DB::table('area')->get();
 				$row = json_decode(json_encode($data), true);
-				$arr = $this->tree($row['data']);
-				$row['data'] = $arr;
-				$page = new Page($row['total'],$row['per_page'],$row['current_page'],$row['path']."?page={page} ",2);
+				$arr = $this->tree($row);
+				$new = array_slice($arr,$offset,$per_page);
+				$page = new Page($total,$per_page,$p,$path);
 				$a = $page->myde_write();
-				$info['row'] = $row;
+				$info['new'] = $new;
 				$info['a'] = $a;
 				return json_encode($info);
 			}
@@ -73,21 +88,25 @@
 		修改
 		**/
 		public function area_update(){
-			/*
 			if(empty($_POST)){
+				$info = DB::table('area')->get();
+				$row = json_decode(json_encode($info), true);
+				$arr = $this->tree($row);
 				$id = $_GET['id'];
-				$data = DB::table('movie_house')->where(['house_id'=>$id])->get();
-				return view('xiao/update',['data'=>$data]);
+				$data = DB::table('area')->where(['area_id'=>$id])->get();
+				$data = json_decode(json_encode($data), true);
+				return view('area/update')->with('arr',$arr)->with('data',$data);
 			}else{
-				$id = $_POST['house_id'];
-				$data = $_POST;
-				// 删除token
-				unset($data['_token'],$data['house_id']);
-				$res = DB::table('movie_house')->where(['house_id'=>$id])->update($data);
+				$id = $_POST['area_id'];
+				$data['area_name'] = $_POST['area_name'];
+				$pid = $_POST['pid'];
+				$info = DB::table('area')->where('area_id',$pid)->first();
+				$level = $info->level;
+				$data['level'] = $level+1;
+				$res = DB::table('area')->where(['area_id'=>$id])->update($data);
 				if($res){
-					echo '<script>alert("修改成功");location.href="'.'movie_house_list'.'";</script>';
+					echo '<script>alert("修改成功");location.href="'.'area_list'.'";</script>';
 				}
 			}
-			*/
 		}
 	}
