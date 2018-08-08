@@ -10,11 +10,9 @@
 		    height: 72px;
 		    background: url(//gw.alicdn.com/tps/i2/TB1zoNfJVXXXXbCXVXXgap8FVXX-150-72.png) left center no-repeat;
 		}
-		.act-lable, a, a:link {
-		    color: #eb002a;
-		}
+
 		a {
-		    text-decoration: none;
+		    color: black;
 		}
 		.cityWrap {
 		    float: left;
@@ -36,6 +34,11 @@
 		    font-family: "microsoft yahei";
 		    float: left;
 		    min-width: 40px;
+		}
+
+		.area{
+			margin-bottom: 40px;
+			margin-left: 180px;
 		}
 		.cityWrap .cityName .tri {
 		    float: left;
@@ -89,15 +92,8 @@
 		        background-position-y: 0%;
 		}
 
-		.act-lable, a, a:link {
-		    color: #eb002a;
-		}
-
 		.head-wrap .head-content .entrance-wrap .entrance li a.service {
 		    background-position: 3px -122px;
-		}
-		.act-lable, a, a:link {
-		    color: #eb002a;
 		}
 		a {
 		    text-decoration: none;
@@ -137,7 +133,7 @@
 		    z-index: 1;
 		    overflow: hidden;
 		    padding-bottom: 20px;
-		    margin-bottom: 50px;
+		    margin-bottom: 15px;
 		}
 		.center-wrap {
 		    position: relative;
@@ -189,9 +185,7 @@
 		    overflow: hidden;
 		    position: relative;
 		}
-		.act-lable, a, a:link {
-		    color: #eb002a;
-		}
+		
 		a {
 		    text-decoration: none;
 		}

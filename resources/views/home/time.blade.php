@@ -7,6 +7,41 @@
 	<!--可无视-->
 	<link href="http://www.20k.com/css/main.css" rel="stylesheet" type="text/css" />
 
+	<style>
+		.red{
+			background:red;
+		}
+
+		.area{
+			font-size: 18px;
+		}
+
+		.title-wrap {
+		    width: 100%;
+		}
+		.center-wrap {
+		    width: 990px;
+		    min-width: 990px;
+		    margin: 0 auto;
+		    *zoom: 1;
+		}
+
+		.title-wrap h3{
+		    display: inline-block;
+		    height: 40px;
+		    width: 100%;
+		    line-height: 40px;
+		    font-size: 20px;
+		    border-bottom: 1px solid #e5e5e5;
+		}
+
+		.area{
+			width:880px;
+			height:120px;
+			background: #FFDDDC;
+		}
+	</style>
+
 	<!--必要样式-->
 	<!-- <link href="http://www.20k.com/css/bootstrap.css" rel="stylesheet" type="text/css" />
 	<link href="http://www.20k.com/css/city-picker.css" rel="stylesheet" type="text/css" /> -->
@@ -17,55 +52,16 @@
 		<a href="">注册</a>
 	</div>
 	<div class="head-wrap" data-spm="header">
-	<div class="head-content center-wrap">
-		<h1 class="logo">
-	        <a target="_top" href="https://dianying.taobao.com/?n_s=new"></a>
-	    </h1>
-	    <!-- <div class="cityWrap M-cityWrap">
-	    		    <div class="container">
-	    				
-	    				<div class="docs-methods">
-	    					<form class="form-inline">
-	    						<div id="distpicker">
-	    							<div class="form-group">
-	    								<div style="position: relative;">
-	    									<input id="city-picker3" class="form-control" readonly type="text" value="北京市" data-toggle="city-picker">
-	    								</div>
-	    							</div>
-	    							<div class="form-group">
-	    								<button class="btn btn-warning" id="reset" type="button">重置</button>
-	    								<button class="btn btn-danger" id="destroy" type="button">确定</button>
-	    							</div>
-	    						</div>
-	    					</form>
-	    				</div>
-	    				
-	    			</div>
-	    		</div> -->
-		<div class="cityWrap M-cityWrap">
+		<div class="head-content center-wrap">
+			<h1 class="logo">
+		        <a target="_top" href="https://dianying.taobao.com/?n_s=new"></a>
+		    </h1>
+			<div class="cityWrap M-cityWrap">
 			    	<a id="cityName" class="cityName" href="javascript:"><span class="name" data-id="110100">北京</span><s class="tri"></s></a>
-			<input id="H_CityId" value="310100" type="hidden">
-			<input id="H_CityName" value="上海" type="hidden">
-			        <div class="cityList ">
-				<div class="cityBox" data-spm="city">
-					<div class="cityTitle">
-						热门:
-			                    <a href="/showDetail.htm?spm=a1z21.3046609.w2.5.32c0112aTpctUX&amp;showId=233674&amp;n_s=new&amp;city=110100" data-id="110100" class="ignore-city current">北京</a>
-						<a href="/showDetail.htm?spm=a1z21.3046609.w2.5.32c0112aTpctUX&amp;showId=233674&amp;n_s=new&amp;city=310100" data-id="310100" class="ignore-city">上海</a>
-			                    <a href="/showDetail.htm?spm=a1z21.3046609.w2.5.32c0112aTpctUX&amp;showId=233674&amp;n_s=new&amp;city=330100" data-id="330100" class="ignore-city">杭州</a>
-			                    <a href="/showDetail.htm?spm=a1z21.3046609.w2.5.32c0112aTpctUX&amp;showId=233674&amp;n_s=new&amp;city=440100" data-id="440100" class="ignore-city">广州</a>
-			                    <a href="/showDetail.htm?spm=a1z21.3046609.w2.5.32c0112aTpctUX&amp;showId=233674&amp;n_s=new&amp;city=440300" data-id="440300" class="ignore-city">深圳</a>
-			                    <a href="/showDetail.htm?spm=a1z21.3046609.w2.5.32c0112aTpctUX&amp;showId=233674&amp;n_s=new&amp;city=500100" data-id="500100" class="ignore-city">重庆</a>
-			                    <a href="/showDetail.htm?spm=a1z21.3046609.w2.5.32c0112aTpctUX&amp;showId=233674&amp;n_s=new&amp;city=510100" data-id="510100" class="ignore-city">成都</a>
-						<a href="/showDetail.htm?spm=a1z21.3046609.w2.5.32c0112aTpctUX&amp;showId=233674&amp;n_s=new&amp;city=320100" data-id="320100" class="ignore-city">南京</a>
-						<a href="/showDetail.htm?spm=a1z21.3046609.w2.5.32c0112aTpctUX&amp;showId=233674&amp;n_s=new&amp;city=320500" data-id="320500" class="ignore-city">苏州</a>
-						<a href="/showDetail.htm?spm=a1z21.3046609.w2.5.32c0112aTpctUX&amp;showId=233674&amp;n_s=new&amp;city=420100" data-id="420100" class="ignore-city">武汉</a>
-						<a href="/showDetail.htm?spm=a1z21.3046609.w2.5.32c0112aTpctUX&amp;showId=233674&amp;n_s=new&amp;city=610100" data-id="610100" class="ignore-city">西安</a>
-					</div>
-					<div class="citySearch">
-						<label>搜索城市:</label><input type="text"><a href="javascript:" class="J_citySearch_btn">&nbsp;确定&nbsp;</a>
-					</div>
-				</div>
+				<input id="H_CityId" value="310100" type="hidden">
+				<input id="H_CityName" value="上海" type="hidden">
+			    <div class="cityList ">
+				
 				<div class="cityShade"></div>
 			        </div>
 			    </div>
@@ -96,6 +92,7 @@
 </div>
 	<div class="detail-wrap">
 		@foreach ($row as $k => $v)
+		<input type="hidden" name="id" value="{{$v->film_id}}" id="id">
 		<div class="center-wrap">
 			<h3 class="cont-title">{{ $v->film_name }} 
 				<i>（{{ $v->enname }}）</i>  <em class="score">{{ $v->score }}</em>
@@ -119,6 +116,60 @@
 		</div>
 		@endforeach
 	</div>
+
+	<div class="title-wrap">
+		<div class="center-wrap">
+			<h3>选座购票</h3>
+		</div>
+	</div>
+
+	<div class="schedule-wrap J_scheduleWrap schedule-loaded" data-spm="w2" data-ajax="/showDetailSchedule.htm" data-param="showId=233674&amp;ts=1533642904644&amp;n_s=new" data-spm-anchor-id="a1z21.6646385.0.w2.2b2449f2ZzDnX0">
+<!-- Filter -->
+	<!-- <div class="filter-wrap">
+		<div class="center-wrap">
+			<ul class="filter-select">
+				<li>
+					<label>选择区域</label>
+					<span class="select-tags sel">
+						<a class="red" href="javascript:;" data-param="showId=233674&amp;n_s=new">全部区域</a>
+					</span>								
+				</li>
+				<li>
+					<label>选择影城</label>
+					<span class="select-tags sel1"  id="all_cinema">
+					</span>	
+				</li>
+				<li>
+					<label>选择时间</label>
+					<span class="select-tags">
+													
+	                    </span>
+				</li>
+			</ul>
+		</div>
+	</div> -->
+	
+	<div class="area">
+		<input type="hidden" name="_token" value="<?php echo csrf_token();?>" id="token">
+
+		<p>
+			<strong>选择区域：</strong>&nbsp;&nbsp;
+			<span >
+				<a class="red">全部区域</a>
+				<a></a>
+			</span>	
+		</p>
+
+		<p>
+			<strong>选择影院：</strong>&nbsp;&nbsp;
+			<span id="all_cinema" class="sel1">
+			
+			</span>	
+		</p>
+	</div>
+
+	
+
 	<div class="center-wrap">
 		<table class="hall-table">
 			<thead>
@@ -749,7 +800,6 @@
 </html>
 <script src="http://www.20k.com/js/jquery-1.11.2.min.js"></script>
 <script src="http://www.20k.com/js/jquery.js"></script>
-<script src="http://www.20k.com/js/bootstrap.js"></script>
 <script src="http://www.20k.com/js/city-picker.data.js"></script>
 <script src="http://www.20k.com/js/city-picker.js"></script>
 <script src="http://www.20k.com/js/main.js"></script>
@@ -762,4 +812,50 @@
 		$('#shouye').css('border-bottom','2px #eb002a solid');
 		$('#yingpian').css('border-bottom','1px solid white');
 	});
+
+
+	$(function(){
+		//init
+		token = $('#token').val();
+		id = $('#id').val();
+		//alert(token);
+		myajax(0);
+
+		$("#all_area").data("myid",0);
+		$("#all_cinema").data("myid",0);
+
+		$(document).on("click",".sel1>a",function(){
+			$(this).parent().find("a").removeClass("red");
+			$(this).addClass("red");
+		});
+
+		$(document).on("click",".sel>a",function(){
+			
+			$(this).parent().find("a").removeClass("red");
+			$(this).addClass("red");
+				
+			var myid = $(this).attr("myid");
+			$(this).parent().data("myid",myid);
+
+			var all_area  = $("#all_area").data("myid");
+			//var all_cinema = $("#all_cinema").data("myid");
+
+			myajax(all_area);
+		});
+	});
+
+	function myajax(area_id){
+
+		$.ajax({
+			url:"http://www.20k.com/search?area_id="+area_id+"&_token="+token+"&id="+id,
+			type:"get",
+			data:'',
+			success:function(obj){
+				//console.log(obj.list);
+				$('#all_area').html(obj.area);
+				$('#all_cinema').html(obj.cinema);
+			}
+		});
+	}
+
 </script>

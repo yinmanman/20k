@@ -78,3 +78,6 @@ Route::any('seat','Home\SeatController@seat');
 Route::any('time','Home\SeatController@time');
 Route::any('list','Home\SeatController@filmList');
 
+//前台搜索
+Route::any('search','Home\SeatController@area');
+
