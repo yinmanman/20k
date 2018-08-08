@@ -27,18 +27,12 @@
 			//print_r($cinema_id);die;
 			$area = DB::table('area')->where(['pid'=>2])->get();
 
-			/*if($area_id == 0){
-				$cinema = DB::table('cinema')->get();
-			}else{
-				$cinema = DB::table('cinema')->where(['area_id'=>$area_id])->get();
-			}*/
 			$data['area'] = $this->getStrArea($area,$area_id);
 			$data['area_id'] = $area_id;
 			$data['cinema'] = $this->getStrCinema($area_id,$cinema_id);
 			$data['row'] = $row;
 			$data['time'] = $this->getTime($time_id);
 			return $data;
-			//return view('home/time',['row'=>$row,'data'=>$data]);
 		}
 
 		public function filmList(){
@@ -82,10 +76,8 @@
 		public function getStrCinema($area_id = 0,$cinema_id = 0){
 			$str = '';
 			if($area_id==0){
-				//$str = "<a class='red' myid='0'>全部影院</a>&nbsp;&nbsp;";
 				$cinema = DB::table('cinema')->get();
 			}else{
-				//$str = "<a myid='0'>全部影院</a>&nbsp;&nbsp;";
 				$cinema = DB::table('cinema')->where(['area_id'=>$area_id])->get();
 			}
 			$cinema = json_decode(json_encode($cinema), true);
