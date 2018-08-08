@@ -170,14 +170,12 @@
 			</li>
 			<li>
 				<label>选择影城</label>
-				<span class="sel1"  id="all_cinema">
+				<span class="sel"  id="all_cinema">
 				</span>	
 			</li>
 			<li>
 				<label>选择时间</label>
-				<span class="select-tags">
-					<a>8月10号</a>&nbsp;&nbsp;&nbsp;&nbsp;	
-					<a>8月11号</a>						
+				<span class="sel" id="all_time">					
                 </span>
 			</li>
 		</ul>
@@ -196,8 +194,6 @@
 			</span>	
 		</p> -->
 	</div>
-
-	
 
 	<div class="center-wrap">
 		<table class="hall-table">
@@ -848,15 +844,15 @@
 		token = $('#token').val();
 		id = $('#id').val();
 		//alert(token);
-		myajax(0);
+		myajax(0,0,0);
 
 		$("#all_area").data("myid",0);
 		$("#all_cinema").data("myid",0);
 
-		$(document).on("click",".sel1>a",function(){
+		/*$(document).on("click",".sel1>a",function(){
 			$(this).parent().find("a").removeClass("red");
 			$(this).addClass("red");
-		});
+		});*/
 
 		$(document).on("click",".sel>a",function(){
 			
@@ -867,22 +863,24 @@
 			$(this).parent().data("myid",myid);
 
 			var all_area  = $("#all_area").data("myid");
-			//var all_cinema = $("#all_cinema").data("myid");
+			var all_cinema = $("#all_cinema").data("myid");
+			var all_time = $("#all_time").data("myid");
 
-			myajax(all_area);
+			myajax(all_area,all_cinema,all_time);
 		});
 	});
 
-	function myajax(area_id){
+	function myajax(area_id,cinema_id,time_id){
 
 		$.ajax({
-			url:"http://www.20k.com/search?area_id="+area_id+"&_token="+token+"&id="+id,
+			url:"http://www.20k.com/search?area_id="+area_id+"&_token="+token+"&id="+id+"&cinema_id="+cinema_id+"&time_id="+time_id,
 			type:"get",
 			data:'',
 			success:function(obj){
 				//console.log(obj.list);
 				$('#all_area').html(obj.area);
 				$('#all_cinema').html(obj.cinema);
+				$('#all_time').html(obj.time);
 			}
 		});
 	}
