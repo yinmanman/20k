@@ -154,7 +154,7 @@
 
 		<p>
 			<strong>选择区域：</strong>&nbsp;&nbsp;
-			<span >
+			<span id="all_area" class="sel">
 				<a class="red">全部区域</a>
 				<a></a>
 			</span>	
