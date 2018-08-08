@@ -12,10 +12,6 @@
 			background:red;
 		}
 
-		.area{
-			font-size: 18px;
-		}
-
 		.title-wrap {
 		    width: 100%;
 		}
@@ -36,9 +32,47 @@
 		}
 
 		.area{
-			width:880px;
-			height:120px;
+			width:970px;
 			background: #FFDDDC;
+		}
+
+		.filter-select {
+		    padding-left: 90px;
+		    background: #FFDDDC;
+		    overflow: hidden;
+		}
+		.filter-select li {
+		    position: relative;
+		    line-height: 25px;
+		    padding: 12px 60px 12px 0;
+		    clear: both;
+		    background: #FFF6F5;
+		    height: auto;
+		    *zoom: 1;
+		}
+
+		.filter-select label {
+		    position: absolute;
+		    width: 90px;
+		    left: -90px;
+		    *top: 10px;
+		    text-align: center;
+		    color: #797979;
+		}
+		.filter-select label {
+		    display: inline-block;
+		    height: 25px;
+		    line-height: 25px;
+		    float: left;
+		    white-space: nowrap;
+		    text-align: center;
+		}
+
+		.filter-select li .sel .sel1 {
+		    width: 100%;
+		    max-height: 50px;
+		    _height: 50px;
+		    overflow: hidden;
 		}
 	</style>
 
@@ -124,48 +158,43 @@
 	</div>
 
 	<div class="schedule-wrap J_scheduleWrap schedule-loaded" data-spm="w2" data-ajax="/showDetailSchedule.htm" data-param="showId=233674&amp;ts=1533642904644&amp;n_s=new" data-spm-anchor-id="a1z21.6646385.0.w2.2b2449f2ZzDnX0">
-<!-- Filter -->
-	<!-- <div class="filter-wrap">
-		<div class="center-wrap">
-			<ul class="filter-select">
-				<li>
-					<label>选择区域</label>
-					<span class="select-tags sel">
-						<a class="red" href="javascript:;" data-param="showId=233674&amp;n_s=new">全部区域</a>
-					</span>								
-				</li>
-				<li>
-					<label>选择影城</label>
-					<span class="select-tags sel1"  id="all_cinema">
-					</span>	
-				</li>
-				<li>
-					<label>选择时间</label>
-					<span class="select-tags">
-													
-	                    </span>
-				</li>
-			</ul>
-		</div>
-	</div> -->
 	
 	<div class="area">
 		<input type="hidden" name="_token" value="<?php echo csrf_token();?>" id="token">
-
-		<p>
+		<ul class="filter-select">
+			<li>
+				<label>选择区域</label>
+				<span class="sel" id="all_area">
+					<a class="red" href="javascript:;" data-param="showId=233674&amp;n_s=new">全部区域</a>
+				</span>								
+			</li>
+			<li>
+				<label>选择影城</label>
+				<span class="sel1"  id="all_cinema">
+				</span>	
+			</li>
+			<li>
+				<label>选择时间</label>
+				<span class="select-tags">
+					<a>8月10号</a>&nbsp;&nbsp;&nbsp;&nbsp;	
+					<a>8月11号</a>						
+                </span>
+			</li>
+		</ul>
+		<!-- <p>
 			<strong>选择区域：</strong>&nbsp;&nbsp;
 			<span id="all_area" class="sel">
 				<a class="red">全部区域</a>
 				<a></a>
 			</span>	
 		</p>
-
+		
 		<p>
 			<strong>选择影院：</strong>&nbsp;&nbsp;
 			<span id="all_cinema" class="sel1">
 			
 			</span>	
-		</p>
+		</p> -->
 	</div>
 
 	
