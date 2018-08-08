@@ -75,6 +75,11 @@ Route::any('captcha/{tmp}','Home\RegisterController@captcha');
 
 //前台
 Route::any('seat','Home\SeatController@seat');
+//电影信息
+Route::any('movie_info','Home\SeatController@movie_info');
+//影厅座位信息
+Route::any('seat_info','Home\SeatController@seat_info');
 Route::any('time','Home\SeatController@time');
 Route::any('list','Home\SeatController@filmList');
+Route::any('add_cost','Home\SeatController@add_cost');
 
