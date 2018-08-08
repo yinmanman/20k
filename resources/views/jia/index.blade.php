@@ -28,7 +28,7 @@
                 <td>{{ $info->nick_name }}</td>
                 <td>{{ $info->is_vip }}</td>
                 <td>
-                    
+                    <a href="updatevip?user_id=<?=$info->user_id?>">修改</a>
                 </td>
             </tr>
         @endforeach

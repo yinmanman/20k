@@ -43,14 +43,10 @@ return [
 
     'disks' => [
 
-        'uploadimg'=>[
-            'driver' => 'local',
-            'root' => storage_path('app/public/img')
-        ],
-
-        'uploadfiles'=>[
-            'driver' => 'local',
-            'root' => storage_path('app/public/file')
+        'uploads'=>[
+            'driver'=>'local',
+            //'root' =>storage_path('public\uploads\cinema'),
+            'root' => public_path('uploads/cinema'),
         ],
 
         'local' => [
@@ -71,6 +67,12 @@ return [
             'secret' => env('AWS_SECRET'),
             'region' => env('AWS_REGION'),
             'bucket' => env('AWS_BUCKET'),
+        ],
+        //定义电影海报图片路径
+        'poster'=>[
+            'driver'=>'local',
+            //'root' =>storage_path('public\assets\img\poster'),
+            'root' => public_path('uploads/poster'),
         ],
 
     ],

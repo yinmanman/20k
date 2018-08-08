@@ -478,8 +478,42 @@ Version: 1.0.0
 
                         <ul class="submenu">
                             <li>
-                                <a href="{{URL('article')}}">
+                                <a href="{{URL(' ')}}">
                                     <span class="menu-text">销售统计
+
+                                    列表</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="menu-dropdown">
+                            <i class="menu-icon fa fa-desktop"></i>
+                            <span class="menu-text"> 影院管理 </span>
+                            <i class="menu-expand"></i>
+                        </a>
+
+                        <ul class="submenu">
+                            <li>
+                                <a href="{{URL('cinema')}}">
+                                    <span class="menu-text">影院
+
+                                    列表</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="menu-dropdown">
+                            <i class="menu-icon fa fa-desktop"></i>
+                            <span class="menu-text"> 地区管理 </span>
+                            <i class="menu-expand"></i>
+                        </a>
+
+                        <ul class="submenu">
+                            <li>
+                                <a href="{{URL('area_list')}}">
+                                    <span class="menu-text">地区
 
                                     列表</span>
                                 </a>

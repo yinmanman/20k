@@ -1,0 +1,239 @@
+.banner-wrap {
+
+    position: relative;
+    display: inline-block;
+    height: 360px;
+    width: 100%;
+    background: #333;
+    overflow: hidden;
+
+}
+.banner-wrap .banner-item {
+    height: 360px;
+    width: 100%;
+}
+
+.banner-wrap .banner-item a {
+    display: block;
+    height: 360px;
+    width: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.act-lable, a, a:link {
+    color: #eb002a;
+}
+
+.center-wrap {
+    width: 990px;
+    min-width: 990px;
+    margin: 0 auto;
+    *zoom: 1;
+}
+.tab-movie-tit {
+    height: 60px;
+    width: 100%;
+    border-bottom: 1px #e5e5e5 solid;
+    margin-bottom: 10px;
+}
+
+.tab-movie-tit a.current {
+    color: #3e3e3e;
+    border-bottom: 2px #eb002a solid;
+}
+
+.tab-movie-tit a {
+    display: block;
+    margin-right: 30px;
+    float: left;
+    color: #999;
+    font-size: 16px;
+    margin-top: 32px;
+    line-height: 26px;
+}
+
+.act-lable, a, a:link {
+    color: #eb002a;
+}
+
+a {
+    text-decoration: none;
+}
+
+.tab-movie-tit a {
+    display: block;
+    margin-right: 30px;
+    float: left;
+    color: #999;
+    font-size: 16px;
+    margin-top: 32px;
+    line-height: 26px;
+}
+
+.tab-movie-tit a.more {
+    float: right;
+    font-size: 12px;
+    color: #eb002a;
+    margin-right: 0;
+}
+
+.tab-movie-tit a {
+    display: block;
+    margin-right: 30px;
+    float: left;
+    color: #999;
+    font-size: 16px;
+    margin-top: 32px;
+    line-height: 26px;
+}
+
+.tab-content {
+    display: inline-block;
+    -webkit-transform: translateZ(20px);
+    -moz-transform: translateZ(20px);
+    -ms-transform: translateZ(20px);
+    transform: translateZ(20px);
+    margin-bottom: 20px;
+}
+
+.tab-movie-list {
+    width: 1050px;
+    display: none;
+}
+
+
+.movie-card-wrap {
+    display: block;
+    width: 161px;
+    height: 273px;
+    overflow: hidden;
+    position: relative;
+    padding-top: 9px;
+    padding-right: 12px;
+    float: left;
+    line-height: 0;
+    margin-right: 35px;
+}
+
+.act-lable, a, a:link {
+    color: #eb002a;
+}
+
+.movie-card {
+    position: relative;
+    display: inline-block;
+    _display: block;
+    background: #000;
+}
+
+.movie-card .movie-card-tag {
+    font-size: 0;
+    width: 0;
+    height: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.movie-card .movie-card-poster {
+    -webkit-mask-image: -webkit-linear-gradient(top,#142842 60%,transparent 120%,transparent);
+}
+
+.movie-card .movie-card-name {
+    position: absolute;
+    bottom: 0;
+    height: 56px;
+    width: 100%;
+}
+
+.movie-card .movie-card-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 160px;
+    height: 224px;
+    color: #fff;
+}
+
+.movie-card .movie-card-info .movie-card-mask {
+    width: 160px;
+    height: 225px;
+    background-color: #000;
+}
+
+.movie-card .movie-card-info .movie-card-list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 125px;
+    padding-top: 30px;
+    padding-left: 25px;
+}
+
+.movie-card .movie-card-info span {
+    display: block;
+    line-height: 24px;
+    width: 100%;
+}
+
+.movie-card .movie-card-info span, .movie-card .movie-card-name span.bt-l, .movie-card .movie-card-name span.bt-r, .movie-cinemalist .cinemalist li .address, .movie-cinemalist .cinemalist li .name, .movie-custlist .custlist li .address, .movie-recent .movie-recent-ul .movie-recent-item p, .movie-weeklist .weeklist li .name, .movie-weeklist .weeklist li .rating {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.movie-card-wrap .movie-card-buy {
+    display: block;
+    height: 40px;
+    width: 102px;
+    line-height: 40px;
+    padding-left: 58px;
+    background: #eb002a;
+    color: #fff;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.movie-card-wrap {
+    display: block;
+    width: 161px;
+    height: 273px;
+    overflow: hidden;
+    position: relative;
+    padding-top: 9px;
+    padding-right: 12px;
+    float: left;
+    line-height: 0;
+    margin-right: 35px;
+}
+
+.act-lable, a, a:link {
+    color: #eb002a;
+}
+
+.movie-card {
+    position: relative;
+    display: inline-block;
+    _display: block;
+    background: #000;
+}
+
+.tab-movie-list {
+    width: 1050px;
+    display: none;
+}
+
+.movie-card-wrap .movie-card-soon {
+    display: block;
+    height: 40px;
+    width: 158px;
+    line-height: 40px;
+    text-align: center;
+    background: #FFF;
+    color: #999;
+    border-left: 1px #e5e5e5 solid;
+    border-right: 1px #e5e5e5 solid;
+    border-bottom: 1px #e5e5e5 solid;
+}
