@@ -47,9 +47,13 @@
 			if(!empty($_POST)){
 				$data = $_POST;
 				unset($data['_token']);
-				$info = DB::table('area')->where('area_id',$data['pid'])->first();
-				$level = $info->level;
-				$data['level'] = $level+1;
+				if($data['pid'] == 0){
+					$data['level'] = 0;
+				}else{
+					$info = DB::table('area')->where('area_id',$data['pid'])->first();
+					$level = $info->level;
+					$data['level'] = $level+1;
+				}
 				$res = DB::table('area')->insert($data);
 				if($res){
 		            echo '<script>alert("添加成功");location.href="'.'area_list'.'";</script>';
