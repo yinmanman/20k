@@ -33,17 +33,16 @@ Route::any('movie_house_add','Admin\HouseController@movie_house_add');
 Route::any('movie_house_delete','Admin\HouseController@movie_house_delete');
 // 放映厅修改
 Route::any('movie_house_update','Admin\HouseController@movie_house_update');
-
 //世超放映厅安排列表
 Route::any('movie_plan_list','Admin\PlanController@movie_plan_list');
 //赵佳会员列表操作start
 Route::any('vip_list','Admin\VipController@vip_list');
 Route::any('all', 'Admin\VipController@all');
 Route::any('updatevip','Admin\VipController@updatevip');
-
 //影院管理
 Route::any('cinema','Admin\CinemaController@cinemaList');
 Route::any('addcinema','Admin\CinemaController@addCinema');
+
 
 Route::any('cinemaadd','Admin\CinemaController@cinemaAdd');
 Route::any('cinemadel','Admin\CinemaController@delCinema');
@@ -66,6 +65,13 @@ Route::any('area_delete','Admin\AreaController@area_delete');
 Route::any('area_update','Admin\AreaController@area_update');
 //后台结束
 
+
+
+
+//注册验证码及短信验证
+Route::any('register','Home\RegisterController@register');
+Route::any('add_user','Home\RegisterController@add_user');
+Route::any('captcha/{tmp}','Home\RegisterController@captcha');
 
 //前台
 Route::any('seat','Home\SeatController@seat');

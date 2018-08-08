@@ -82,9 +82,9 @@ function post($funAndOperate, $body)
   1 => string 'Accept: application/json' (length=24)
     $headers;
     die;*/
-    echo("url:<br/>" . $url . "\n");
-    echo("<br/><br/>body:<br/>" . json_encode($body));
-    echo("<br/><br/>headers:<br/>");
+    //echo("url:<br/>" . $url . "\n");
+    //echo("<br/><br/>body:<br/>" . json_encode($body));
+    //echo("<br/><br/>headers:<br/>");
     //var_dump($headers);
 
     // 要求post请求的消息体为&拼接的字符串，所以做下面转换

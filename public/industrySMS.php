@@ -19,15 +19,14 @@ $body['smsContent']="【{1}】您的验证码为{2}，请于分钟内正确输�
 $body['to'] = $_POST['tel'];
 $body['templateid'] = '223770425';
 $yzm = rand(10000, 99999);
-$code = '5';
+$code = '1';
 $body['param']= "$yzm,$code";
 $body['accountSid'] = '09a211b1f53a4958a89a026244d092d1';
 $time = date("YmdHis",time());
 $body['timestamp'] = $time;
 /*$body['sig']= md5('d922cabdcbaf4e049e941e8a469fa0f1f76e8589519c443b9dee27bebd1fad4c'.$time);*/
-
-
 // 提交请求
 $result = post($funAndOperate, $body);
+echo $yzm;
 //echo "<pre>";
 //var_dump($result);
