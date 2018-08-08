@@ -45,7 +45,7 @@ Route::any('movie_house_delete','Admin\HouseController@movie_house_delete');
 Route::any('movie_house_update','Admin\HouseController@movie_house_update');
 //世超放映厅安排列表
 Route::any('movie_plan_list','Admin\PlanController@movie_plan_list');
-<<<<<<< HEAD
+
 Route::any('cinema_num','Admin\PlanController@cinema_num');
 Route::any('house_setting','Admin\PlanController@house_setting');
 Route::any('ajax_moie_begin','Admin\PlanController@ajax_moie_begin');
@@ -53,7 +53,7 @@ Route::any('addMovie','Admin\PlanController@addMovie');
 Route::any('house_Setting_list','Admin\PlanController@house_Setting_list');
 Route::any('edit_setting','Admin\PlanController@edit_setting');
 Route::any('test','Admin\PlanController@test');
-=======
+
 //赵佳会员列表操作start
 Route::any('vip_list','Admin\VipController@vip_list');
 Route::any('all', 'Admin\VipController@all');
@@ -61,7 +61,7 @@ Route::any('updatevip','Admin\VipController@updatevip');
 //影院管理
 Route::any('cinema','Admin\CinemaController@cinemaList');
 Route::any('addcinema','Admin\CinemaController@addCinema');
->>>>>>> master
+
 
 
 Route::any('cinemaadd','Admin\CinemaController@cinemaAdd');
