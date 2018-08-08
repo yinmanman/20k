@@ -19,12 +19,7 @@ Route::get('/', function () {
 Route::any('index','Admin\AdminController@index');
 
 
-<<<<<<< HEAD
 
-
-
-=======
->>>>>>> shiming
 //世明影片管理列表
 Route::any('movie_list','Admin\MovieController@movie_list');
 //世明影片管理列表_增
