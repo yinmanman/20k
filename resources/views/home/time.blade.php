@@ -277,17 +277,17 @@
 							<del class="old">80.00</del>
 					</td>
 					<td class="hall-seat">
-														<a class="seat-btn" href="https://dianying.taobao.com/seatOrder.htm?scheduleId=552374431&amp;n_s=new">选座购票</a>
+						<a class="seat-btn" href="https://dianying.taobao.com/seatOrder.htm?scheduleId=552374431&amp;n_s=new">选座购票</a>
 					</td>
 				</tr>
 										
 				<tr class="even">
 					<td class="hall-time">
-							<em class="bold">11:45</em>
-							 预计13:43散场 					
+						<em class="bold">11:45</em>
+						预计13:43散场 					
 					</td>
 					<td class="hall-type">
-							国语 2D
+						国语 2D
 					</td>
 					<td class="hall-name">
 						1号厅
@@ -297,7 +297,7 @@
 							<label> 宽松  </label>
 							<span class="flowing-vol"><i style="width:0.0%"></i></span>
 							<span class="flowing-view J_flowingView rendered" data-scheduleid="552196053">
-								    								<i class="icon-zoom"></i>
+								    <i class="icon-zoom"></i>
 									<div class="view-wrap" style="height: 84px; display: none;">
 										
 									</div>
