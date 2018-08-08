@@ -70,7 +70,7 @@
 	</div>
 
 	<div id="M-banner" class="banner-wrap">
-        <ul class="banner-content" style="width: 1349px; overflow: hidden; height: 360px;"><div style="position: absolute; overflow: hidden; width: 4047px; transition-duration: 0s; transform: translate3d(-1349px, 0px, 0px); backface-visibility: hidden; left: 0px;"><li class="banner-item" style="float: left; overflow: hidden; width: 1349px; display: block;"><a target="_top" href="https://www.taobao.com/market/dianying/xsdxs.php" style="background-image: url(&quot;//gw.alicdn.com/tfs/TB1GRxRfZLJ8KJjy0FnXXcFDpXa-1920-360.jpg&quot;);"></a></li><li class="banner-item" style="float: left; overflow: hidden; width: 1349px; display: block;"><a target="_top" href="https://www.taobao.com/market/dianying/xsdxs.php" style="background-image: url(&quot;//gw.alicdn.com/tfs/TB1GRxRfZLJ8KJjy0FnXXcFDpXa-1920-360.jpg&quot;);"></a></li><li class="banner-item" style="float: left; overflow: hidden; width: 1349px; display: block;"><a target="_top" href="https://www.taobao.com/market/dianying/xsdxs.php" style="background-image: url(&quot;//gw.alicdn.com/tfs/TB1GRxRfZLJ8KJjy0FnXXcFDpXa-1920-360.jpg&quot;);"></a></li></div></ul>
+        <ul class="banner-content"><div ><li class="banner-item"><img src="http://www.20k.com/uploads/TB1GRxRfZLJ8KJjy0FnXXcFDpXa-1920-360.jpg" alt="" ></li></div></ul>
         <div class="banner-scrollable"><li class="current"><a href="javascript:void(0);">1</a></li></div>
         <a class="M-BannerLeft bannerControl" href="javascript:;" style="display: none;"></a>
         <a class="M-BannerRight bannerControl" href="javascript:;" style="display: none;"></a>
