@@ -40,33 +40,36 @@
 			return $data;
 		}
 
+		/*
+		*获取影厅安排的列表
+		*/
 		public function getSetting($area_id,$cinema_id,$film_id,$time_id){
-			if($area_id==0){
+			if($area_id==0){//此状态获取到所有区域的影院
 				$cinema = DB::table('cinema')->get();
-			}else{
+			}else{//点击相应的区域获取所对应的影院信息
 				$cinema = DB::table('cinema')->where(['area_id'=>$area_id])->get();
 			}
 
 			$house = DB::table('movie_house')->get();//获取影厅信息
-			$film = DB::table('films')->where(['film_id'=>$film_id])->get();
-			if($cinema_id == 0){
+			$film = DB::table('films')->where(['film_id'=>$film_id])->get();//获取电影信息
+			if($cinema_id == 0){//获取显示的第一家影院的影厅安排信息
 				$house_setting = DB::table('house_setting')->where(['cinema_id'=>$cinema[0]->cinema_id,'film_id'=>$film_id,'status'=>1])->get();
-			}else{
+			}else{//点击相应的影院获取所对应的影厅安排信息
 				$house_setting = DB::table('house_setting')->where(['cinema_id'=>$cinema_id,'film_id'=>$film_id,'status'=>1])->get();
-			}	
+			}
+
 			$setting = json_decode(json_encode($house_setting), true);
 
-			if($time_id == 0){
-				$time = strtotime(date("Y-m-d"));
-			}else if($time_id == 1){
+			if($time_id == 0){//今天的日期
+				$time = strtotime(date("Y-m-d"));//把日期转换为时间戳
+			}else if($time_id == 1){//明天的日期
 				$time = strtotime(date("Y-m-d",strtotime("+1 day")));
 			}
 
-			if($setting){
-				$start = strtotime($setting[0]['movie_dangqi_start']);
-				$stop = strtotime($setting[0]['movie_dangqi_stop']);
-				if($time>=$start && $time<=$stop){
-					//return $house_setting;
+			if($setting){//如果影厅有安排电影放映
+				$start = strtotime($setting[0]['movie_dangqi_start']);//电影档期开始时间
+				$stop = strtotime($setting[0]['movie_dangqi_stop']);//电影档期结束时间
+				if($time>=$start && $time<=$stop){//如果今天或明天的日期在电影档期内
 					$str = '';
 					foreach($house_setting as $k=>$v){
 						$str .= "<tr ";
@@ -92,9 +95,9 @@
 					    $str .= "</td>";
 					    $str .= "<td class='hall-flow'><div class='flowing-wrap flowing-loose'><label> 宽松  </label><span class='flowing-vol'><i style='width:0.0%'></i></span><span class='flowing-view J_flowingView rendered' data-scheduleid='552196054'><i class='icon-zoom'></i><div class='view-wrap' style='height: 84px; display: none;'></div></span></div></td>";
 					    $str .= "<td class='hall-price' data-partcode='yueke'><em class='now'>";
-					    $str .= $film[0]->cost_price;//cost_price
+					    $str .= $film[0]->cost_price;
 					    $str .= ".00</em><del class='old'>";
-					    $str .= $film[0]->present_price;//cost_price
+					    $str .= $film[0]->present_price;
 					    $str .= ".00</del></td>";
 					    $str .= "<td class='hall-seat'><a class='seat-btn' href='http://www.20k.com/seat?house_id=".$v->house_id."&film_id=".$film_id."'>选座购票</a></td>";
 					    $str .= "</tr>";
@@ -117,18 +120,23 @@
 			return view('home/list',['data'=>$data,'list'=>$list]);
 		}
 
-
+		/*
+		*获取播放时间
+		*/
 		public function getTime($time_id){
-			$today = date("m月d日");
-			$tomorrow = date("m月d日",strtotime("+1 day"));
-			if($time_id == 0){
+			$today = date("m月d日");//今天的日期
+			$tomorrow = date("m月d日",strtotime("+1 day"));//明天的日期
+			if($time_id == 0){//0 表示是今天的日期
 				$str = "&nbsp;&nbsp;<a myid='0' class='red'>".$today."（今天）</a>&nbsp;&nbsp;<a myid='1'>".$tomorrow."（明天）</a>";
-			}else if($time_id == 1){
+			}else if($time_id == 1){//1 表示是明天的日期
 				$str = "&nbsp;&nbsp;<a myid='0'>".$today."（今天）</a>&nbsp;&nbsp;<a myid='1' class='red'>".$tomorrow."（明天）</a>";
 			}
 			return $str;
 		}
 
+		/*
+		*获取所有区域
+		*/
 		public function getStrArea($list,$area_id=0){
 			if($area_id==0){
 				$str = "&nbsp;&nbsp;<a class='red' myid='0'>全部区域</a>&nbsp;&nbsp;";
@@ -150,11 +158,14 @@
 			return $str;
 		}
 
+		/*
+		*获取每个区域对应的影院信息
+		*/
 		public function getStrCinema($area_id = 0,$cinema_id = 0){
 			$str = '';
-			if($area_id==0){
+			if($area_id==0){//0 表示获取到所有影院
 				$cinema = DB::table('cinema')->get();
-			}else{
+			}else{// 否则获取所点击地区对应的影院
 				$cinema = DB::table('cinema')->where(['area_id'=>$area_id])->get();
 			}
 			$cinema = json_decode(json_encode($cinema), true);
@@ -183,7 +194,5 @@
 			if($res){
 				echo 1;
 			}
-
-
 		}	
 	}
