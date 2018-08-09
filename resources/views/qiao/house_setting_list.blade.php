@@ -21,7 +21,7 @@
 		</thead>
 		<tbody id="tbody">
 			<?php 
-				if (!empty($movie_data)) {
+				if ($movie_data->first()) {
 					foreach ($movie_data as $value){
 			 ?>
 				<tr <?php if($value->status == 0){echo "style='color:red'";}?>>
@@ -42,7 +42,7 @@
 			<?php 
 					}
 				}else{
-					echo "<h2>没有安排电影</h2>";
+					echo "<div class='alert alert-warning fade in'><button class='close' data-dismiss='alert'><font style='vertical-align: inherit;'><font style='vertical-align: inherit;'>×</font></font></button><i class='fa-fw fa fa-warning'></i><strong><font style='vertical-align: inherit;'><font style='vertical-align: inherit;'>警告</font></font></strong><font style='vertical-align: inherit;'><font style='vertical-align: inherit;'>囧 ~还没有排期，你可以通过添加电影场次 安排电影放映</font></font></div>";
 				}
 			 ?>
 		</tbody>
