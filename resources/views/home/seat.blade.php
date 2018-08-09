@@ -25,6 +25,7 @@
 		#selected-seats {max-height: 150px;overflow-y: auto;overflow-x: none;width: 200px;} 
 		#selected-seats li{float:left; width:72px; height:26px; line-height:26px; border:1px solid #d3d3d3; background:#f7f7f7; margin:6px; font-size:14px; font-weight:bold; text-align:center} 
 		.zw{display: inline-block;width: 80px;background-color: green;height: 40px;margin: 10px;text-align: center;line-height: 40px;}
+		
 	</style>
 </head>
 <body>
@@ -67,11 +68,33 @@
 	$(function(){
 		$(".zw").on("click",function(){
 			$(this).each(function(){
+				var status = $(this).attr("status");
+				if(status == 1){
+					$(this).attr("status",'2');
+					$(this).css("background-color",'blue');
+					var id = $(this).attr('id');
+					var cc = id.split('_');
+					$(".seat").append("<li id='cart-"+id+"'>"+cc[0]+"排"+cc[1]+"座"+"</li>");
+					$("#counter").html(parseInt($("#counter").html())+1);
+					var jg = parseInt($(".jg").val());
+					var a = $("#total").html(parseInt($("#total").html())+jg);
+				}else if(status == 2){
+					$(this).attr("status",'1');
+					$(this).css("background-color",'green');
+					var id = $(this).attr('id');
+					$("#cart-"+id).remove();
+					$("#counter").html(parseInt($("#counter").html())-1);
+					var jg = parseInt($(".jg").val());
+					var a = $("#total").html(parseInt($("#total").html())-jg);
+				}else{
+					alert('已售出');
+				}
+				/*
 				var cc = $(this).attr('id').split('_');
 				$(".seat").append("<li>"+cc[0]+"排"+cc[1]+"座"+"</li>");
 				$("#counter").html(parseInt($("#counter").html())+1);
 				var jg = parseInt($(".jg").val());
-				var a = $("#total").html(parseInt($("#total").html())+jg);
+				var a = $("#total").html(parseInt($("#total").html())+jg);*/
 			});
 		});
 	});
