@@ -30,7 +30,10 @@
 </head>
 <body>
 	<div class="demo"> 
-		<input type="hidden" name="" class="jg" value="{{$info->sale_num}}">
+		<input type="hidden" name="film_id" id="film_id" value="{{$data->film_id}}">
+		<input type="hidden" name="house_id" id="house_id" value="{{$info->house_id}}">
+		<input type="hidden" name="dq_id" id="dq_id" value="{{$arr->id}}">
+		<input type="hidden" name="" class="jg" value="{{$data->cost_price}}">
 		<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>" class="_token">
        	<div id="seat-map"> 
         	<div class="front">屏幕</div>
@@ -38,7 +41,15 @@
         		for ($i=1; $i<=5 ; $i++) { 
         			for ($j=1; $j<=5 ; $j++) { 
         	?>
-        	<a id="<?php echo $i."_".$j?>" class="zw" status="1"><?php echo $j;?></a>
+        	<a id="<?php echo $i."_".$j?>" class="zw"
+        	<?php
+        		foreach(explode(",", $arr->sale_seat) as $k=>$v){
+        			if(substr($v,5) == $i."_".$j){
+        				echo "style='background-color:yellow' status='3'";
+        			}
+        		}
+        	?>
+        	><?php echo $j;?></a>
         	<?php
         			}
         			echo "<br>";
@@ -47,7 +58,7 @@
     	</div> 
 	    <div class="booking-details"> 
 	        <p>影片：<span class="movie_name">{{$data->film_name}}</span></p> 
-	        <p>时间：<span class="start_time">11月14日 21:00</span></p> 
+	        <p>时间：<span class="start_time"><?php echo date('m月d日') ?>{{$arr->movie_start}}</span></p> 
 	        <p>座位：</p> 
 	        <ul id="selected-seats" class="seat">
 	        	
@@ -69,7 +80,18 @@
 		$(".zw").on("click",function(){
 			$(this).each(function(){
 				var status = $(this).attr("status");
-				if(status == 1){
+				if(status == 2){	// 可选
+					$(this).removeAttr('status');
+					$(this).css("background-color",'green');
+					var id = $(this).attr('id');
+					$("#cart-"+id).remove();
+					$("#counter").html(parseInt($("#counter").html())-1);
+					var jg = parseInt($(".jg").val());
+					var a = $("#total").html(parseInt($("#total").html())-jg);
+				}else if(status == 3){	// 已售出
+					alert('已售出');
+					$(this).removeAttr('click');
+				}else{	// 已选
 					$(this).attr("status",'2');
 					$(this).css("background-color",'blue');
 					var id = $(this).attr('id');
@@ -78,49 +100,46 @@
 					$("#counter").html(parseInt($("#counter").html())+1);
 					var jg = parseInt($(".jg").val());
 					var a = $("#total").html(parseInt($("#total").html())+jg);
-				}else if(status == 2){
-					$(this).attr("status",'1');
-					$(this).css("background-color",'green');
-					var id = $(this).attr('id');
-					$("#cart-"+id).remove();
-					$("#counter").html(parseInt($("#counter").html())-1);
-					var jg = parseInt($(".jg").val());
-					var a = $("#total").html(parseInt($("#total").html())-jg);
-				}else{
-					alert('已售出');
 				}
-				/*
-				var cc = $(this).attr('id').split('_');
-				$(".seat").append("<li>"+cc[0]+"排"+cc[1]+"座"+"</li>");
-				$("#counter").html(parseInt($("#counter").html())+1);
-				var jg = parseInt($(".jg").val());
-				var a = $("#total").html(parseInt($("#total").html())+jg);*/
 			});
 		});
 	});
 
-		var seat = [];
-		$(".checkout-button").on('click',function(){
-			$(".seat li").each(function(){
-				seat.push($(this).html());
-			});
-				var token = $("._token").val();
-				var money_num = $("#total").html();
-				var start_time = $(".start_time").html();
-			$.ajax({
-                url:"/add_cost",
-                data:{
-                    seat:seat,
-                    money_num:money_num,
-                    start_time:start_time,
-                    _token:token
-                },
-                type:"post",
-                success:function(msg){
-                    if(msg == 1){
-                        alert("购买成功");
-                    }
-                }
-            });
+	var seat = [];
+	$(".checkout-button").on('click',function(){
+		$(".seat li").each(function(){
+			seat.push($(this).attr('id'));
 		});
+		if(seat.length < 1){
+			alert("请先选座位");
+		}else{
+			var user_id = 1;
+			var dq_id = $("#dq_id").val();
+			var film_id = $("#film_id").val();
+			var house_id = $("#film_id").val();
+			var token = $("._token").val();
+			var money_num = $("#total").html();
+			var start_time = $(".start_time").html();
+			$.ajax({
+	            url:"add_cost",
+	            data:{
+	            	dq_id:dq_id,
+	            	user_id:user_id,
+	            	film_id:film_id,
+	            	house_id:house_id,
+	                seat:seat,
+	                money_num:money_num,
+	                start_time:start_time,
+	                _token:token
+	            },
+	            type:"post",
+	            success:function(msg){
+	                if(msg == 1){
+	                    alert("购买成功");
+	                    location.href="list";
+	                }
+	            }
+	        });
+	    }
+	});
 </script>

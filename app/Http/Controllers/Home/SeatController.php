@@ -6,17 +6,18 @@
 	use DB;
 	class SeatController extends Controller{
 		public function seat(){
-			$film_id = 1;//电影id
-			$house_id = 1;//影厅id
+			$film_id = $_GET['film_id'];//电影id
+			$house_id = $_GET['house_id'];//影厅id
+			$dq_id = $_GET['dq_id'];	// 场次id
 			$data = DB::table('films')->where(['film_id'=>$film_id])->first();
 			$info = DB::table('movie_house')->where(['house_id'=>$house_id])->first();
-			return view('home/seat')->with('data',$data)->with('info',$info);
+			$arr = DB::table('house_setting')->where(['id'=>$dq_id])->first();
+			return view('home/seat')->with('data',$data)->with('info',$info)->with('arr',$arr);
 		}
 
 		public function time(){
 			$id = $_GET['id'];
 			$row = DB::table('films')->where(['film_id'=>$id])->get();
-			//print_r($row[0]->film_id);die;
 			return view('home/time',['row'=>$row]);
 		}
 
@@ -28,7 +29,6 @@
 			$area_id = isset($_GET['area_id'])?$_GET['area_id']:0;
 			$cinema_id = isset($_GET['cinema_id'])?$_GET['cinema_id']:0;
 			$time_id = isset($_GET['time_id'])?$_GET['time_id']:0;
-			//print_r($cinema_id);die;
 			$area = DB::table('area')->where(['pid'=>2])->get();
 
 			$data['area'] = $this->getStrArea($area,$area_id);//获取地区的名称
@@ -99,7 +99,7 @@
 					    $str .= ".00</em><del class='old'>";
 					    $str .= $film[0]->present_price;
 					    $str .= ".00</del></td>";
-					    $str .= "<td class='hall-seat'><a class='seat-btn' href='http://www.20k.com/seat?house_id=".$v->house_id."&film_id=".$film_id."'>选座购票</a></td>";
+					    $str .= "<td class='hall-seat'><a class='seat-btn' href='http://www.20k.com/seat?house_id=".$v->house_id."&film_id=".$film_id."&dq_id=".$v->id."'>选座购票</a></td>";
 					    $str .= "</tr>";
 					}
 					
@@ -187,9 +187,17 @@
 			return $str;
 		}
 		public function add_cost(){
+			$data = $_POST;
+			$dq_id = $data['dq_id'];
 			$data['seat'] = implode(',', $_POST['seat']);//座位  数组
-			$data['money_num'] = $_POST['money_num'];//总价
-			$data['start_time'] = $_POST['start_time'];//电影开场时间
+			$sale_seat = DB::table('house_setting')->where(['id'=>$dq_id])->first();
+			if(empty($sale_seat->sale_seat)){
+				$data['seat'] = $data['seat'];
+			}else{
+				$data['seat'] = $sale_seat->sale_seat.",".$data['seat'];
+			}
+			DB::table('house_setting')->where(['id'=>$dq_id])->update(['sale_seat'=>$data['seat']]);
+			unset($data['_token'],$data['dq_id']);
 			$res = DB::table('user_cost')->insert($data);
 			if($res){
 				echo 1;
