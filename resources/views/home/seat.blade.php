@@ -114,7 +114,7 @@
 		if(seat.length < 1){
 			alert("请先选座位");
 		}else{
-			var user_id = 1;
+			var user_id = $("#user_id").val();
 			var dq_id = $("#dq_id").val();
 			var film_id = $("#film_id").val();
 			var house_id = $("#film_id").val();
