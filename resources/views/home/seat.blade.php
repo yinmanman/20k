@@ -34,6 +34,7 @@
 		<input type="hidden" name="house_id" id="house_id" value="{{$info->house_id}}">
 		<input type="hidden" name="dq_id" id="dq_id" value="{{$arr->id}}">
 		<input type="hidden" name="" class="jg" value="{{$data->cost_price}}">
+		<input type="hidden" name="" id="user_id" value="<?php echo Session::get('user_id')?>">
 		<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>" class="_token">
        	<div id="seat-map"> 
         	<div class="front">屏幕</div>
