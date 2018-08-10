@@ -45,7 +45,7 @@
         	<?php
         		foreach(explode(",", $arr->sale_seat) as $k=>$v){
         			if(substr($v,5) == $i."_".$j){
-        				echo "style='background-color:yellow' status='3'";
+        				echo "style='background-color:yellow' status='2'";
         			}
         		}
         	?>
@@ -80,7 +80,7 @@
 		$(".zw").on("click",function(){
 			$(this).each(function(){
 				var status = $(this).attr("status");
-				if(status == 2){	// 可选
+				if(status == 1){	// 已选
 					$(this).removeAttr('status');
 					$(this).css("background-color",'green');
 					var id = $(this).attr('id');
@@ -88,11 +88,11 @@
 					$("#counter").html(parseInt($("#counter").html())-1);
 					var jg = parseInt($(".jg").val());
 					var a = $("#total").html(parseInt($("#total").html())-jg);
-				}else if(status == 3){	// 已售出
+				}else if(status == 2){	// 已售出
 					alert('已售出');
 					$(this).removeAttr('click');
-				}else{	// 已选
-					$(this).attr("status",'2');
+				}else{	// 可选
+					$(this).attr("status",'1');
 					$(this).css("background-color",'blue');
 					var id = $(this).attr('id');
 					var cc = id.split('_');
