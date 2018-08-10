@@ -11,6 +11,9 @@
 .banner-wrap .banner-item {
     height: 360px;
     width: 100%;
+    position:absolute;
+    left:-240px;
+    top:-1px;
 }
 
 .banner-wrap .banner-item a {
@@ -142,7 +145,7 @@ a {
 .movie-card .movie-card-name {
     position: absolute;
     bottom: 0;
-    height: 56px;
+    height: 20px;
     width: 100%;
 }
 
@@ -180,6 +183,11 @@ a {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+.movie-card-name{
+    color:white;
+    font-size: 12px;
 }
 
 .movie-card-wrap .movie-card-buy {

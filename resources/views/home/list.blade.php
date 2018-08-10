@@ -74,8 +74,18 @@
 	</div>
 
 	<div id="M-banner" class="banner-wrap">
-        <ul class="banner-content"><div ><li class="banner-item"><img src="http://www.20k.com/uploads/TB1GRxRfZLJ8KJjy0FnXXcFDpXa-1920-360.jpg" alt="" ></li></div></ul>
-        <div class="banner-scrollable"><li class="current"><a href="javascript:void(0);">1</a></li></div>
+        <ul class="banner-content">
+        	<div >
+        		<li class="banner-item">
+        			<img src="http://www.20k.com/uploads/TB1GRxRfZLJ8KJjy0FnXXcFDpXa-1920-360.jpg" alt="" >
+        		</li>
+        	</div>
+        </ul>
+        <div class="banner-scrollable">
+        	<li class="current">
+        		<a href="javascript:void(0);">1</a>
+        	</li>
+        </div>
         <a class="M-BannerLeft bannerControl" href="javascript:;" style="display: none;"></a>
         <a class="M-BannerRight bannerControl" href="javascript:;" style="display: none;"></a>
     </div>
