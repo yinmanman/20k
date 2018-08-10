@@ -94,6 +94,10 @@ Route::any('register','Home\RegisterController@register');
 Route::any('add_user','Home\RegisterController@add_user');
 Route::any('captcha/{tmp}','Home\RegisterController@captcha');
 
+//登录
+Route::any('login','Home\LoginController@login');
+Route::any('logindo','Home\LoginController@loginDo');
+
 //前台
 Route::any('seat','Home\SeatController@seat');
 //电影信息
