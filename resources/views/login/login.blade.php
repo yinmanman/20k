@@ -29,9 +29,6 @@ Version: 1.0.0
     <link href="assets/css/demo.min.css" rel="stylesheet" />
     <link href="assets/css/animate.min.css" rel="stylesheet" />
     <link id="skin-link" href="" rel="stylesheet" type="text/css" />
-
-    <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
-    <script src="assets/js/skins.min.js"></script>
 </head>
 <!--Head Ends-->
 <!--Body-->
@@ -39,32 +36,27 @@ Version: 1.0.0
     <div class="login-container animated fadeInDown">
         <div class="loginbox bg-white">
             <div class="loginbox-title">请登录</div>
-            <div class="loginbox-social">
-  
-                
+            <div class="loginbox-social">        
             </div>
             <div class="loginbox-or">
                 <div class="or-line"></div>
                 <div class="or">OR</div>
             </div>
-            <div class="loginbox-textbox">
-                <input type="text" class="form-control" placeholder="Email" />
-            </div>
-            <div class="loginbox-textbox">
-                <input type="text" class="form-control" placeholder="Password" />
-            </div>
-
-            <div class="loginbox-submit">
-                <input type="button" class="btn btn-primary btn-block" value="Login">
-            </div>
+            <form action="logindo" method="post">
+                <input type="hidden" name="_token" value="<?php echo csrf_token();?>"><br><br>
+                <div class="loginbox-textbox">
+                    <input type="text" class="form-control" placeholder="nickname" name="nick_name" />
+                </div>
+                <div class="loginbox-textbox">
+                    <input type="text" class="form-control" placeholder="Password" name="pwd" />
+                </div>
+                <div class="loginbox-submit">
+                    <input type="submit" class="btn btn-primary btn-block" value="Login">
+                </div>
+            </form>
         </div>
 
     </div>
-    <!--Basic Scripts-->
-    <script src="assets/js/jquery-2.0.3.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <!--Beyond Scripts-->
-    <script src="assets/js/beyond.js"></script>
 </body>
 <!--Body Ends-->
 </html>

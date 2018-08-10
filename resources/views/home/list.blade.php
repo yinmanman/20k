@@ -7,10 +7,14 @@
 	<link href="http://www.20k.com/css/list.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<div align="right">
-		<a href="">登录</a>
-		<a href="register">注册</a>
-	</div>
+	<?php
+		if(!empty(Session::get('user_id'))){
+			echo "<div align='right'>欢迎&nbsp;&nbsp;".Session::get('username')."</div>";
+		}else{
+			echo "<div align='right'><a href='login'>登录</a><a href='register'>注册</a></div>";
+		}
+	?>
+	
 	<div class="head-wrap" data-spm="header">
 		<div class="head-content center-wrap">
 			<h1 class="logo">
